@@ -1,0 +1,68 @@
+services:
+  db:
+    image: postgres:17
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 1m
+      timeout: 15s
+      retries: 3
+      start_period: 45s
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:?Variable not set}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?Variable not set}
+      - POSTGRES_DB=${POSTGRES_DB:?Variable not set}
+
+  prestart:
+    image: "${DOCKER_IMAGE_BACKEND}:${TAG:-latest}"
+    restart: on-failure
+    build:
+      context: ./backend
+    command: ["bash", "scripts/prestart.sh"]
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+    env_file:
+      - .env
+    environment:
+      - BACKEND_CORS_ORIGINS=${BACKEND_CORS_ORIGINS}
+      - SECRET_KEY=${SECRET_KEY:?Variable not set}
+      - FIRST_SUPERUSER=${FIRST_SUPERUSER:?Variable not set}
+      - FIRST_SUPERUSER_PASSWORD=${FIRST_SUPERUSER_PASSWORD:?Variable not set}
+      - POSTGRES_SERVER=db
+      - POSTGRES_PORT=${POSTGRES_PORT:?Variable not set}
+      - POSTGRES_DB=${POSTGRES_DB:?Variable not set}
+      - POSTGRES_USER=${POSTGRES_USER:?Variable not set}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?Variable not set}
+
+  backend:
+    image: "${DOCKER_IMAGE_BACKEND}:${TAG:-latest}"
+    restart: always
+    build:
+      context: ./backend
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+      prestart:
+        condition: service_completed_successfully
+    env_file:
+      - .env
+    environment:
+      - BACKEND_CORS_ORIGINS=${BACKEND_CORS_ORIGINS}
+      - SECRET_KEY=${SECRET_KEY:?Variable not set}
+      - FIRST_SUPERUSER=${FIRST_SUPERUSER:?Variable not set}
+      - FIRST_SUPERUSER_PASSWORD=${FIRST_SUPERUSER_PASSWORD:?Variable not set}
+      - POSTGRES_SERVER=db
+      - POSTGRES_PORT=${POSTGRES_PORT:?Variable not set}
+      - POSTGRES_DB=${POSTGRES_DB:?Variable not set}
+      - POSTGRES_USER=${POSTGRES_USER:?Variable not set}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?Variable not set}
+
+volumes:
+  db_data:

@@ -1,0 +1,22 @@
+services:
+  db:
+    restart: no
+    ports:
+      - "5432:5432"
+
+  backend:
+    restart: no
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    command: ["fastapi", "run", "--reload", "app/main.py"]
+    develop:
+      watch:
+        - path: ./backend
+          action: sync
+          target: /app
+          ignore:
+            - .venv
+        - path: ./backend/pyproject.toml
+          action: rebuild
