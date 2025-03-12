@@ -1,7 +1,16 @@
 import secrets
+from typing import Annotated, Any
 
-from pydantic import EmailStr, PostgresDsn, computed_field
+from pydantic import AnyUrl, BeforeValidator, EmailStr, PostgresDsn, computed_field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+def parse_cors(value: Any) -> list[str] | str:
+    if isinstance(value, list):
+        return value
+    if isinstance(value, str):
+        return [origin.strip() for origin in value.split(",")]
+    raise ValueError(value)
 
 
 class Settings(BaseSettings):
@@ -13,6 +22,15 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     SECRET_KEY: str = secrets.token_urlsafe(32)
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7
+
+    BACKEND_CORS_ORIGINS: Annotated[
+        list[AnyUrl] | str, BeforeValidator(parse_cors)
+    ] = []
+
+    @computed_field  # type: ignore
+    @property
+    def all_cors_origins(self) -> list[str]:
+        return [str(origin).rstrip("/") for origin in self.BACKEND_CORS_ORIGINS]
 
     PROJECT_NAME: str
     POSTGRES_SERVER: str
