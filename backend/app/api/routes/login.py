@@ -18,7 +18,7 @@ def register(session: SessionDep, user_in: UserRegister) -> Any:
     user_db = user_crud.get_by_gmail(session=session, email=user_in.email)
     if user_db:
         raise HTTPException(status_code=400, detail="The email is already in use")
-    user_create = UserCreate.model_validate(user_in)
+    user_create = UserCreate.model_validate(user_in.model_dump())
     user = user_crud.create(session=session, user_in=user_create)
     return user
 
