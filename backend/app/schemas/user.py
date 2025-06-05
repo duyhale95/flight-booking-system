@@ -40,16 +40,3 @@ class UsersPublic(BaseModel):
 class UpdatePassword(BaseModel):
     current_password: str = Field(min_length=8, max_length=40)
     new_password: str = Field(min_length=8, max_length=40)
-
-
-class Token(BaseModel):
-    access_token: str
-    bearer: str = "bearer"
-
-
-class TokenPayload(BaseModel):
-    sub: str
-
-
-class Message(BaseModel):
-    msg: str
