@@ -2,7 +2,7 @@ from typing import TYPE_CHECKING, Optional
 
 from sqlmodel import Field, Relationship, SQLModel
 
-from app.utils import generate_unique_id
+from app.utils import generate_ticket_number, generate_unique_id
 
 if TYPE_CHECKING:
     from .flight import Flight
@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 
 class Ticket(SQLModel, table=True):
     id: str = Field(default_factory=generate_unique_id, primary_key=True)
-    ticket_number: str = Field(unique=True)
+    ticket_number: str = Field(default_factory=generate_ticket_number)
 
     # Foreign keys
     passenger_id: str = Field(foreign_key="passenger.id")
