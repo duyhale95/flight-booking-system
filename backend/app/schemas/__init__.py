@@ -1,3 +1,11 @@
+from .flight import (
+    FlightBase,
+    FlightCreate,
+    FlightPublic,
+    FlightSearch,
+    FlightsPublic,
+    FlightUpdate,
+)
 from .user import (
     BaseUser,
     UpdatePassword,
