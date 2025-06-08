@@ -1,7 +1,7 @@
 [project]
 name = "flight-booking-api"
 version = "0.1.0"
-description = "Add your description here"
+description = "Flight booking API"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -24,6 +24,7 @@ dev = [
 
 [tool.mypy]
 strict = true
+implicit_reexport = true
 exclude = ["migrations"]
 
 [tool.ruff]
@@ -31,6 +32,7 @@ target-version = "py312"
 exclude = ["migrations"]
 
 [tool.ruff.lint]
+per-file-ignores = { "__init__.py" = ["F401"] }
 select = [
     "F",  # Pyflakes
     "E",  # pycodestyle errors
@@ -40,4 +42,7 @@ select = [
     "B",  # flake8-bugbear
     "C4",  # flake8-comprehensions
     "UP",  # pyupgrade
+]
+ignore = [
+    "UP007"
 ]
