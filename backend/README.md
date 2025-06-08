@@ -67,3 +67,10 @@ Apply the latest migrations to the database:
 ```bash
 $ docker compose exec backend alembic upgrade head
 ```
+
+- **Copy a migration file:**
+
+Copy a migration file from the container to the local migrations directory:
+
+```bash
+$ docker cp flight-booking-backend-1:/app/migrations/versions/file_name.py migrations/versions/
