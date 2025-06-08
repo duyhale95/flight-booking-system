@@ -1,0 +1,34 @@
+from datetime import date
+from typing import Optional
+
+from pydantic import BaseModel
+
+
+class PassengerBase(BaseModel):
+    first_name: str
+    last_name: str
+    nationality: str
+    date_of_birth: date
+    passport_number: Optional[str] = None
+    booking_id: str
+
+
+class PassengerCreate(PassengerBase):
+    pass
+
+
+class PassengerUpdate(BaseModel):
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
+    nationality: Optional[str] = None
+    date_of_birth: Optional[date] = None
+    passport_number: Optional[str] = None
+
+
+class PassengerPublic(PassengerBase):
+    id: str
+
+
+class PassengersPublic(BaseModel):
+    data: list[PassengerPublic]
+    count: int
