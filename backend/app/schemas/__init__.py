@@ -1,3 +1,10 @@
+from .booking import (
+    BookingBase,
+    BookingCreate,
+    BookingPublic,
+    BookingsPublic,
+    BookingUpdate,
+)
 from .flight import (
     FlightBase,
     FlightCreate,
