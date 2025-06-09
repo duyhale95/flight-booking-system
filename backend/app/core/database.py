@@ -10,7 +10,7 @@ engine = create_engine(str(settings.SQLALCHEMY_DATABASE_URI))
 def init_db(session: Session) -> None:
     # Tables will be created with Alembic migrations
 
-    user = user_crud.get_by_gmail(session=session, email=settings.FIRST_SUPERUSER)
+    user = user_crud.get_by_email(session=session, email=settings.FIRST_SUPERUSER)
     if not user:
         user_in = UserCreate(
             name="admin",
