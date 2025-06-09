@@ -1,3 +1,4 @@
+import logging
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
 
@@ -8,15 +9,31 @@ from sqlmodel import Session
 from app.api.main import api_router
 from app.core.config import settings
 from app.core.database import engine, init_db
+from app.core.logging import setup_logging
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
+    # Setup application logging
+    setup_logging()
+    logger = logging.getLogger(__name__)
+    logger.info(f"Starting {settings.PROJECT_NAME}")
+    logger.info(f"API version: {settings.API_V1_STR}")
+
     # Initialize data in the database
-    with Session(engine) as session:
-        init_db(session)
+    try:
+        with Session(engine) as session:
+            init_db(session)
+            logger.info("Database initialized successfully")
+    except Exception as e:
+        logger.error(f"Fail to initialize database: {e}", exc_info=True)
+        raise
+
+    logger.info("Application startup completed successfully")
 
     yield
+
+    logger.info("Shutting down application")
 
 
 app = FastAPI(
