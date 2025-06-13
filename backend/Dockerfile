@@ -22,6 +22,8 @@ FROM base AS runtime
 
 COPY --from=builder --chown=app:app /app /app
 
+RUN mkdir -p /app/logs && chown -R app:app /app
+
 USER app
 
 ENV PATH="/app/.venv/bin:$PATH" \
