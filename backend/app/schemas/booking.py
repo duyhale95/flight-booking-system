@@ -24,6 +24,8 @@ class BookingPublic(BookingBase):
     id: str
     booking_number: str
     booking_date: datetime
+    deleted: bool
+    deleted_at: Optional[datetime]
     user_id: str
 
 

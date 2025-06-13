@@ -1,6 +1,6 @@
 from datetime import datetime
 from enum import Enum
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Optional
 
 from sqlmodel import Field, Relationship, SQLModel
 
@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 
 class BookingStatus(str, Enum):
     PENDING = "pending"
-    CANCELLED = "cancelled"
     CONFIRMED = "confirmed"
+    CANCELLED = "cancelled"
 
 
 class Booking(SQLModel, table=True):
@@ -27,6 +27,8 @@ class Booking(SQLModel, table=True):
     booking_date: datetime = Field(default_factory=datetime.now)
     total_price: float
     status: BookingStatus = BookingStatus.PENDING
+    deleted: bool = Field(default=False, index=True)
+    deleted_at: Optional[datetime] = Field(default=None)
 
     # Foreign keys
     user_id: str = Field(foreign_key="user.id")

@@ -1,3 +1,4 @@
+import logging
 from typing import Any, Optional
 
 from fastapi import APIRouter
@@ -8,7 +9,7 @@ from app.core.exceptions import (
     UnauthorizedBookingAccessError,
     handle_exception,
 )
-from app.cruds import booking_crud
+from app.cruds import ViewFilter, booking_crud
 from app.models.booking import BookingStatus
 from app.schemas import (
     BookingCreate,
@@ -18,6 +19,7 @@ from app.schemas import (
     Message,
 )
 
+logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/bookings", tags=["bookings"])
 
 
@@ -28,20 +30,19 @@ def read_bookings(
     skip: int = 0,
     limit: int = 10,
     status: Optional[BookingStatus] = None,
+    view_filter: ViewFilter = ViewFilter.ACTIVE,
 ) -> Any:
-    try:
-        if current_user.is_superuser:
-            bookings, count = booking_crud.get_all_bookings(
-                session, skip, limit, status
-            )
-        else:
-            bookings, count = booking_crud.get_bookings_by_user(
-                session, current_user.id, skip, limit, status
-            )
-        return {"data": bookings, "count": count}
+    logger.info("Retrieving bookings with filters")
 
-    except BookingError as e:
-        raise handle_exception(e) from e
+    if current_user.is_superuser:
+        bookings, count = booking_crud.get_all_bookings(
+            session, skip, limit, status, view_filter
+        )
+    else:
+        bookings, count = booking_crud.get_bookings_by_user(
+            session, current_user.id, skip, limit, status, view_filter
+        )
+    return {"data": bookings, "count": count}
 
 
 @router.post("", response_model=BookingPublic)
@@ -49,13 +50,22 @@ def create_booking(
     session: SessionDep, current_user: CurrentUser, booking_in: BookingCreate
 ) -> Any:
     try:
+        logger.info(f"Creating new booking for user ID: {current_user.id}")
+
         if not current_user.is_superuser and booking_in.user_id != current_user.id:
+            logger.warning(
+                f"User {current_user.id} is not authorized to create booking "
+                f"for user {booking_in.user_id}"
+            )
             raise UnauthorizedBookingAccessError()
 
         booking_db = booking_crud.create(session, booking_in)
+
+        logger.info(f"Booking created successfully: {booking_db.id}")
         return booking_db
 
     except BookingError as e:
+        logger.error(f"Error creating booking: {str(e)}")
         raise handle_exception(e) from e
 
 
@@ -64,14 +74,18 @@ def read_booking(
     session: SessionDep, current_user: CurrentUser, booking_id: str
 ) -> Any:
     try:
+        logger.info(f"Retrieving booking with ID: {booking_id}")
+
         booking_db = booking_crud.get_by_id(session, booking_id)
 
         # Check permissions
         booking_crud.verify_user_can_access_booking(booking_db, current_user)
 
+        logger.info(f"Booking retrieved successfully: {booking_db.id}")
         return booking_db
 
     except BookingError as e:
+        logger.error(f"Error retrieving booking: {str(e)}")
         raise handle_exception(e) from e
 
 
@@ -83,6 +97,8 @@ def update_booking(
     booking_in: BookingUpdate,
 ) -> Any:
     try:
+        logger.info(f"Updating booking with ID: {booking_id}")
+
         booking_db = booking_crud.get_by_id(session, booking_id)
 
         # Check permissions
@@ -99,9 +115,11 @@ def update_booking(
         else:
             booking_db = booking_crud.update(session, booking_db, booking_in)
 
+        logger.info(f"Booking updated successfully: {booking_db.id}")
         return booking_db
 
     except BookingError as e:
+        logger.error(f"Error updating booking: {str(e)}")
         raise handle_exception(e) from e
 
 
@@ -110,6 +128,8 @@ def delete_booking(
     session: SessionDep, current_user: CurrentUser, booking_id: str
 ) -> Any:
     try:
+        logger.info(f"Deleting booking with ID: {booking_id}")
+
         booking_db = booking_crud.get_by_id(session, booking_id)
 
         # Check permissions
@@ -117,7 +137,31 @@ def delete_booking(
 
         booking_crud.delete(session, booking_db)
 
+        logger.info(f"Booking deleted successfully: {booking_id}")
         return Message(msg="Booking deleted successfully")
 
     except BookingError as e:
+        logger.error(f"Error deleting booking: {str(e)}")
+        raise handle_exception(e) from e
+
+
+@router.post("/{booking_id}/restore", response_model=BookingPublic)
+def restore_booking(
+    session: SessionDep, current_user: CurrentUser, booking_id: str
+) -> Any:
+    try:
+        logger.info(f"Restoring booking with ID: {booking_id}")
+
+        booking_db = booking_crud.get_by_id(session, booking_id)
+
+        # Check permissions
+        booking_crud.verify_user_can_access_booking(booking_db, current_user)
+
+        booking_db = booking_crud.restore(session, booking_db)
+
+        logger.info(f"Booking restored successfully: {booking_db.id}")
+        return booking_db
+
+    except BookingError as e:
+        logger.error(f"Error restoring booking: {str(e)}")
         raise handle_exception(e) from e

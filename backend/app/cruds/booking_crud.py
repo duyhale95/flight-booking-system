@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime
 from typing import Any, Optional
 
 from pydantic import BaseModel
@@ -11,6 +12,7 @@ from app.core.exceptions import (
     BookingStatusError,
     UnauthorizedBookingAccessError,
 )
+from app.cruds import ViewFilter
 from app.models import Booking, BookingStatus, User
 from app.schemas import BookingCreate, BookingUpdate
 
@@ -68,6 +70,7 @@ def get_bookings_by_user(
     skip: int = 0,
     limit: int = 100,
     status: Optional[BookingStatus] = None,
+    view_filter: ViewFilter = ViewFilter.ACTIVE,
 ) -> tuple[list[Booking], int]:
     """
     Get all bookings for a specific user.
@@ -81,6 +84,11 @@ def get_bookings_by_user(
 
     if status:
         query = query.where(Booking.status == status)
+
+    if view_filter == ViewFilter.ACTIVE:
+        query = query.where(Booking.deleted == False)
+    elif view_filter == ViewFilter.DELETED:
+        query = query.where(Booking.deleted == True)
 
     # Get total count
     count_stmt = select(func.count()).select_from(query.subquery())
@@ -101,6 +109,7 @@ def get_all_bookings(
     skip: int = 0,
     limit: int = 100,
     status: Optional[BookingStatus] = None,
+    view_filter: ViewFilter = ViewFilter.ACTIVE,
 ) -> tuple[list[Booking], int]:
     """
     Get all bookings with optional status filter.
@@ -114,6 +123,11 @@ def get_all_bookings(
 
     if status:
         query = query.where(Booking.status == status)
+
+    if view_filter == ViewFilter.ACTIVE:
+        query = query.where(Booking.deleted == False)
+    elif view_filter == ViewFilter.DELETED:
+        query = query.where(Booking.deleted == True)
 
     # Get total count
     count_stmt = select(func.count()).select_from(query.subquery())
@@ -139,8 +153,7 @@ def update(
         booking_in = booking_in.model_dump(exclude_unset=True)
 
     try:
-        new_data = BookingUpdate.model_validate(booking_in)
-        booking_db.sqlmodel_update(new_data)
+        booking_db.sqlmodel_update(booking_in)
 
         session.add(booking_db)
         session.commit()
@@ -195,19 +208,47 @@ def update_booking_status(
 
 def delete(session: Session, booking_db: Booking) -> None:
     """
-    Delete a booking from the database.
+    Soft delete a booking by marking it as deleted.
     """
-    logger.info(f"Deleting booking with ID: {booking_db.id}")
+    logger.info(f"Soft deleting booking with ID: {booking_db.id}")
 
     try:
-        session.delete(booking_db)
+        booking_db.deleted = True
+        booking_db.deleted_at = datetime.now()
+        session.add(booking_db)
         session.commit()
-        logger.info(f"Successfully deleted booking with ID: {booking_db.id}")
+        logger.info(f"Successfully soft deleted booking with ID: {booking_db.id}")
 
     except Exception as e:
         session.rollback()
-        logger.error(f"Error deleting booking with ID {booking_db.id}: {str(e)}")
-        raise BookingError(500, f"Failed to delete booking: {str(e)}") from e
+        logger.error(f"Error soft deleting booking with ID {booking_db.id}: {str(e)}")
+        raise BookingError(500, f"Failed to soft delete booking: {str(e)}") from e
+
+
+def restore(session: Session, booking_db: Booking) -> Booking:
+    """
+    Restore a soft-deleted booking.
+    """
+    logger.info(f"Restoring soft-deleted booking with ID: {booking_db.id}")
+
+    if not booking_db.deleted:
+        logger.warning(f"Booking {booking_db.id} is not deleted, cannot restore")
+        return booking_db
+
+    try:
+        booking_db.deleted = False
+        booking_db.deleted_at = None
+        session.add(booking_db)
+        session.commit()
+        session.refresh(booking_db)
+
+        logger.info(f"Successfully restored booking with ID: {booking_db.id}")
+        return booking_db
+
+    except Exception as e:
+        session.rollback()
+        logger.error(f"Error restoring booking with ID {booking_db.id}: {str(e)}")
+        raise BookingError(500, f"Failed to restore booking: {str(e)}") from e
 
 
 def verify_user_can_access_booking(booking_db: Booking, current_user: User) -> None:
