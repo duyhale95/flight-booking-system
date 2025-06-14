@@ -16,8 +16,11 @@ class BookingCreate(BookingBase):
 
 
 class BookingUpdate(BaseModel):
-    status: Optional[BookingStatus] = None
     total_price: Optional[float] = None
+
+
+class BookingStatusUpdate(BaseModel):
+    status: Optional[BookingStatus] = None
 
 
 class BookingPublic(BookingBase):

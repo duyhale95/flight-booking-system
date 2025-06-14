@@ -14,7 +14,7 @@ from app.core.exceptions import (
 )
 from app.cruds import ViewFilter
 from app.models import Booking, BookingStatus, User
-from app.schemas import BookingCreate, BookingUpdate
+from app.schemas import BookingCreate, BookingStatusUpdate, BookingUpdate
 
 logger = logging.getLogger(__name__)
 
@@ -142,7 +142,9 @@ def get_all_bookings(
 
 
 def update(
-    session: Session, booking_db: Booking, booking_in: dict[str, Any] | BookingUpdate
+    session: Session,
+    booking_db: Booking,
+    booking_in: dict[str, Any] | BookingUpdate | BookingStatusUpdate,
 ) -> Booking:
     """
     Update booking information.
@@ -223,6 +225,23 @@ def delete(session: Session, booking_db: Booking) -> None:
         session.rollback()
         logger.error(f"Error soft deleting booking with ID {booking_db.id}: {str(e)}")
         raise BookingError(500, f"Failed to soft delete booking: {str(e)}") from e
+
+
+def hard_delete(session: Session, booking_db: Booking) -> None:
+    """
+    Hard delete a booking.
+    """
+    logger.info(f"Hard deleting booking with ID: {booking_db.id}")
+
+    try:
+        session.delete(booking_db)
+        session.commit()
+        logger.info(f"Successfully hard deleted booking with ID: {booking_db.id}")
+
+    except Exception as e:
+        session.rollback()
+        logger.error(f"Error hard deleting booking with ID {booking_db.id}: {str(e)}")
+        raise BookingError(500, f"Failed to hard delete booking: {str(e)}") from e
 
 
 def restore(session: Session, booking_db: Booking) -> Booking:

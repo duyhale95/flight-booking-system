@@ -3,6 +3,7 @@ from .booking import (
     BookingCreate,
     BookingPublic,
     BookingsPublic,
+    BookingStatusUpdate,
     BookingUpdate,
 )
 from .flight import (
