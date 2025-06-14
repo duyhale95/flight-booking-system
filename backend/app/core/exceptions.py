@@ -94,3 +94,24 @@ class UnauthorizedBookingAccessError(BookingError):
 
     def __init__(self) -> None:
         super().__init__(403, "Not authorized to access this booking")
+
+
+class PassengerError(Error):
+    """Base class for passenger-related exceptions"""
+
+    pass
+
+
+class PassengerNotFoundError(PassengerError):
+    """Exception raised when a passenger is not found"""
+
+    def __init__(self, passenger_id: Optional[str] = None) -> None:
+        identifier = f" with ID {passenger_id}" if passenger_id else ""
+        super().__init__(404, f"Passenger{identifier} not found")
+
+
+class UnauthorizedPassengerAccessError(PassengerError):
+    """Exception raised when user tries to access a passenger they don't own"""
+
+    def __init__(self) -> None:
+        super().__init__(403, "Not authorized to access this passenger")
