@@ -14,12 +14,12 @@ from app.core.exceptions import (
 )
 from app.core.security import get_password_hash, verify_password
 from app.models import User
-from app.schemas import UserCreate
+from app.schemas import UserCreate, UserUpdate, UserUpdateStatus
 
 logger = logging.getLogger(__name__)
 
 
-def create(*, session: Session, user_in: UserCreate) -> User:
+def create(session: Session, user_in: UserCreate) -> User:
     """
     Create a new user in the database.
     """
@@ -49,7 +49,9 @@ def create(*, session: Session, user_in: UserCreate) -> User:
 
 
 def update(
-    *, session: Session, user_db: User, new_data: dict[str, Any] | BaseModel
+    session: Session,
+    user_db: User,
+    new_data: dict[str, Any] | UserUpdate | UserUpdateStatus,
 ) -> User:
     """
     Update user information.
@@ -86,7 +88,7 @@ def update(
         raise UserError(500, f"Failed to update user: {str(e)}") from e
 
 
-def delete(*, session: Session, user_db: User) -> None:
+def delete(session: Session, user_db: User) -> None:
     """
     Delete a user from the database.
     """
@@ -103,7 +105,7 @@ def delete(*, session: Session, user_db: User) -> None:
         raise UserError(500, f"Failed to delete user: {str(e)}") from e
 
 
-def get_by_email(*, session: Session, email: str) -> User | None:
+def get_by_email(session: Session, email: str) -> User | None:
     """
     Get user by email.
     """
@@ -112,7 +114,7 @@ def get_by_email(*, session: Session, email: str) -> User | None:
     return session.exec(select(User).where(User.email == email)).first()
 
 
-def get_by_id(*, session: Session, user_id: str) -> User:
+def get_by_id(session: Session, user_id: str) -> User:
     """
     Get user by ID.
     """
@@ -126,7 +128,6 @@ def get_by_id(*, session: Session, user_id: str) -> User:
 
 
 def search_users(
-    *,
     session: Session,
     email: Optional[str] = None,
     name: Optional[str] = None,
@@ -166,7 +167,7 @@ def search_users(
     return users, total
 
 
-def authenticate(*, session: Session, email: str, password: str) -> User:
+def authenticate(session: Session, email: str, password: str) -> User:
     """
     Authenticate a user with email and password.
     """
