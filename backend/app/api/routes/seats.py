@@ -1,20 +1,18 @@
+import logging
 from typing import Any, Optional
 
-from fastapi import APIRouter, Depends, HTTPException
-from sqlmodel import func, select
+from fastapi import APIRouter, Depends
 
 from app.api.deps import SessionDep, get_current_superuser
-from app.models import Flight, Seat
+from app.core.exceptions import SeatError, handle_exception
+from app.cruds import seat_crud
 from app.schemas import Message, SeatCreate, SeatPublic, SeatsPublic, SeatUpdate
 
+logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/seats", tags=["seats"])
 
 
-@router.get(
-    "",
-    dependencies=[Depends(get_current_superuser)],
-    response_model=SeatsPublic,
-)
+@router.get("", response_model=SeatsPublic)
 def read_seats(
     session: SessionDep,
     skip: int = 0,
@@ -22,23 +20,21 @@ def read_seats(
     flight_id: Optional[str] = None,
     available_only: bool = False,
 ) -> Any:
-    statement = select(Seat)
+    try:
+        logger.info("Retrieving seats with filters")
 
-    if flight_id:
-        statement = statement.where(Seat.flight_id == flight_id)
+        if flight_id:
+            seats, count = seat_crud.get_seats_by_flight(
+                session, flight_id, skip, limit, available_only
+            )
+        else:
+            seats, count = seat_crud.get_all_seats(session, skip, limit, available_only)
 
-    if available_only:
-        statement = statement.where(Seat.is_available is True)
+        return {"data": seats, "count": count}
 
-    # Get total count
-    count_statement = select(func.count()).select_from(statement)
-    count = session.exec(count_statement).one()
-
-    # Apply pagination
-    statement = statement.offset(skip).limit(limit)
-    seats = session.exec(statement).all()
-
-    return {"data": seats, "count": count}
+    except SeatError as e:
+        logger.error(f"Error reading seats: {str(e)}")
+        raise handle_exception(e) from e
 
 
 @router.post(
@@ -46,39 +42,35 @@ def read_seats(
     dependencies=[Depends(get_current_superuser)],
     response_model=SeatPublic,
 )
-def create_seat(
-    session: SessionDep,
-    seat_in: SeatCreate,
-) -> Any:
-    flight = session.get(Flight, seat_in.flight_id)
-    if not flight:
-        raise HTTPException(status_code=404, detail="Flight not found")
-
-    statement = select(Seat).where(
-        Seat.flight_id == seat_in.flight_id,
-        Seat.seat_number == seat_in.seat_number,
-    )
-    existing_seat = session.exec(statement).first()
-
-    if existing_seat:
-        raise HTTPException(
-            status_code=409,
-            detail=f"Seat {seat_in.seat_number} already exists",
+def create_seat(session: SessionDep, seat_in: SeatCreate) -> Any:
+    try:
+        logger.info(
+            f"Creating new seat {seat_in.seat_number} for flight {seat_in.flight_id}"
         )
 
-    db_seat = Seat.model_validate(seat_in)
-    session.add(db_seat)
-    session.commit()
-    session.refresh(db_seat)
-    return db_seat
+        seat_db = seat_crud.create(session, seat_in)
+
+        logger.info(f"Seat created successfully: {seat_db.id}")
+        return seat_db
+
+    except SeatError as e:
+        logger.error(f"Error creating seat: {str(e)}")
+        raise handle_exception(e) from e
 
 
 @router.get("/{seat_id}", response_model=SeatPublic)
 def read_seat(session: SessionDep, seat_id: str) -> Any:
-    seat = session.get(Seat, seat_id)
-    if not seat:
-        raise HTTPException(status_code=404, detail="Seat not found")
-    return seat
+    try:
+        logger.info(f"Retrieving seat with ID: {seat_id}")
+
+        seat_db = seat_crud.get_by_id(session, seat_id)
+
+        logger.info(f"Seat retrieved successfully: {seat_db.id}")
+        return seat_db
+
+    except SeatError as e:
+        logger.error(f"Error retrieving seat: {str(e)}")
+        raise handle_exception(e) from e
 
 
 @router.patch(
@@ -86,34 +78,19 @@ def read_seat(session: SessionDep, seat_id: str) -> Any:
     dependencies=[Depends(get_current_superuser)],
     response_model=SeatPublic,
 )
-def update_seat(
-    session: SessionDep,
-    seat_id: str,
-    seat_in: SeatUpdate,
-) -> Any:
-    seat = session.get(Seat, seat_id)
-    if not seat:
-        raise HTTPException(status_code=404, detail="Seat not found")
+def update_seat(session: SessionDep, seat_id: str, seat_in: SeatUpdate) -> Any:
+    try:
+        logger.info(f"Updating seat with ID: {seat_id}")
 
-    if seat_in.seat_number and seat_in.seat_number != seat.seat_number:
-        statement = select(Seat).where(
-            Seat.flight_id == seat.flight_id,
-            Seat.seat_number == seat_in.seat_number,
-        )
-        existing_seat = session.exec(statement).first()
+        seat_db = seat_crud.get_by_id(session, seat_id)
+        updated_seat = seat_crud.update(session, seat_db, seat_in)
 
-        if existing_seat:
-            raise HTTPException(
-                status_code=409,
-                detail=f"Seat {seat_in.seat_number} already exists",
-            )
+        logger.info(f"Seat updated successfully: {seat_id}")
+        return updated_seat
 
-    new_data = seat_in.model_dump(exclude_unset=True)
-    seat.sqlmodel_update(new_data)
-    session.add(seat)
-    session.commit()
-    session.refresh(seat)
-    return seat
+    except SeatError as e:
+        logger.error(f"Error updating seat: {str(e)}")
+        raise handle_exception(e) from e
 
 
 @router.delete(
@@ -122,10 +99,15 @@ def update_seat(
     response_model=Message,
 )
 def delete_seat(session: SessionDep, seat_id: str) -> Any:
-    seat = session.get(Seat, seat_id)
-    if not seat:
-        raise HTTPException(status_code=404, detail="Seat not found")
+    try:
+        logger.info(f"Deleting seat with ID: {seat_id}")
 
-    session.delete(seat)
-    session.commit()
-    return Message(msg="Seat deleted successfully")
+        seat_db = seat_crud.get_by_id(session, seat_id)
+        seat_crud.delete(session, seat_db)
+
+        logger.info(f"Seat deleted successfully: {seat_id}")
+        return Message(msg="Seat deleted successfully")
+
+    except SeatError as e:
+        logger.error(f"Error deleting seat: {str(e)}")
+        raise handle_exception(e) from e

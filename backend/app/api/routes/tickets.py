@@ -1,7 +1,7 @@
+import logging
 from typing import Any
 
-from fastapi import APIRouter, Depends, HTTPException
-from sqlmodel import func, select
+from fastapi import APIRouter, Depends
 
 from app.api.deps import (
     CurrentUser,
@@ -9,9 +9,11 @@ from app.api.deps import (
     get_current_superuser,
     get_current_user,
 )
-from app.models import Seat, Ticket
+from app.core.exceptions import TicketError, handle_exception
+from app.cruds import ticket_crud
 from app.schemas import Message, TicketCreate, TicketPublic, TicketsPublic, TicketUpdate
 
+logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/tickets", tags=["tickets"])
 
 
@@ -22,52 +24,38 @@ def read_tickets(
     skip: int = 0,
     limit: int = 100,
 ) -> Any:
-    statement = select(Ticket)
+    try:
+        logger.info("Retrieving tickets with filters")
 
-    if not current_user.is_superuser:
-        statement = statement.where(Ticket.passenger_id == current_user.id)
+        if current_user.is_superuser:
+            tickets, count = ticket_crud.get_all_tickets(session, skip, limit)
+        else:
+            # TODO: Implement getting passenger_id from current_user
+            tickets, count = [], 0
 
-    # Get total count
-    count_statement = select(func.count()).select_from(statement)
-    count = session.exec(count_statement).one()
+        return {"data": tickets, "count": count}
 
-    # Apply pagination
-    statement = statement.offset(skip).limit(limit)
-    tickets = session.exec(statement).all()
-
-    return {"data": tickets, "count": count}
+    except TicketError as e:
+        logger.error(f"Error reading tickets: {str(e)}")
+        raise handle_exception(e) from e
 
 
 @router.post("", dependencies=[Depends(get_current_user)], response_model=TicketPublic)
-def create_ticket(
-    session: SessionDep,
-    ticket_in: TicketCreate,
-) -> Any:
-    if ticket_in.seat_id:
-        seat_db = session.get(Seat, ticket_in.seat_id)
-        if not seat_db:
-            raise HTTPException(status_code=404, detail="Seat not found")
-        if not seat_db.is_available:
-            raise HTTPException(status_code=400, detail="Seat is already taken")
-
-        # Mark seat as unavailable
-        seat_db.is_available = False
-        session.add(seat_db)
-
-    else:
-        statement = select(Seat).where(
-            Seat.flight_id == ticket_in.flight_id,
-            Seat.is_available is True,
+def create_ticket(session: SessionDep, ticket_in: TicketCreate) -> Any:
+    try:
+        logger.info(
+            f"Creating ticket for passenger {ticket_in.passenger_id} "
+            f"on flight {ticket_in.flight_id}"
         )
-        seat_db = session.exec(statement).first()
-        if not seat_db:
-            raise HTTPException(status_code=400, detail="No available seats")
 
-    ticket_db = Ticket.model_validate(ticket_in)
-    session.add(ticket_db)
-    session.commit()
-    session.refresh(ticket_db)
-    return ticket_db
+        ticket_db = ticket_crud.create(session, ticket_in)
+
+        logger.info(f"Ticket created successfully: {ticket_db.id}")
+        return ticket_db
+
+    except TicketError as e:
+        logger.error(f"Error creating ticket: {str(e)}")
+        raise handle_exception(e) from e
 
 
 @router.get(
@@ -75,14 +63,18 @@ def create_ticket(
     dependencies=[Depends(get_current_user)],
     response_model=TicketPublic,
 )
-def read_ticket(
-    session: SessionDep,
-    ticket_id: str,
-) -> Any:
-    ticket = session.get(Ticket, ticket_id)
-    if not ticket:
-        raise HTTPException(status_code=404, detail="Ticket not found")
-    return ticket
+def read_ticket(session: SessionDep, ticket_id: str) -> Any:
+    try:
+        logger.info(f"Retrieving ticket with ID: {ticket_id}")
+
+        ticket_db = ticket_crud.get_by_id(session, ticket_id)
+
+        logger.info(f"Ticket retrieved successfully: {ticket_db.id}")
+        return ticket_db
+
+    except TicketError as e:
+        logger.error(f"Error retrieving ticket: {str(e)}")
+        raise handle_exception(e) from e
 
 
 @router.patch(
@@ -90,36 +82,19 @@ def read_ticket(
     dependencies=[Depends(get_current_superuser)],
     response_model=TicketPublic,
 )
-def update_ticket(
-    session: SessionDep,
-    ticket_id: str,
-    ticket_in: TicketUpdate,
-) -> Any:
-    ticket_db = session.get(Ticket, ticket_id)
-    if not ticket_db:
-        raise HTTPException(status_code=404, detail="Ticket not found")
+def update_ticket(session: SessionDep, ticket_id: str, ticket_in: TicketUpdate) -> Any:
+    try:
+        logger.info(f"Updating ticket with ID: {ticket_id}")
 
-    if ticket_in.seat_id and ticket_in.seat_id != ticket_db.seat_id:
-        new_seat = session.get(Seat, ticket_in.seat_id)
-        if not new_seat:
-            raise HTTPException(status_code=404, detail="Seat not found")
-        if not new_seat.is_available:
-            raise HTTPException(status_code=400, detail="Seat is already taken")
+        ticket_db = ticket_crud.get_by_id(session, ticket_id)
+        updated_ticket = ticket_crud.update(session, ticket_db, ticket_in)
 
-        # Mark new seat as unavailable
-        new_seat.is_available = False
-        session.add(new_seat)
+        logger.info(f"Ticket updated successfully: {ticket_id}")
+        return updated_ticket
 
-        old_seat = session.get(Seat, ticket_db.seat_id)
-        old_seat.is_available = True
-        session.add(old_seat)
-
-    new_data = ticket_in.model_dump(exclude_unset=True)
-    ticket_db.sqlmodel_update(new_data)
-    session.add(ticket_db)
-    session.commit()
-    session.refresh(ticket_db)
-    return ticket_db
+    except TicketError as e:
+        logger.error(f"Error updating ticket: {str(e)}")
+        raise handle_exception(e) from e
 
 
 @router.delete(
@@ -127,18 +102,16 @@ def update_ticket(
     dependencies=[Depends(get_current_superuser)],
     response_model=Message,
 )
-def delete_ticket(
-    session: SessionDep,
-    ticket_id: str,
-) -> Any:
-    ticket = session.get(Ticket, ticket_id)
-    if not ticket:
-        raise HTTPException(status_code=404, detail="Ticket not found")
+def delete_ticket(session: SessionDep, ticket_id: str) -> Any:
+    try:
+        logger.info(f"Deleting ticket with ID: {ticket_id}")
 
-    seat = session.get(Seat, ticket.seat_id)
-    seat.is_available = True
-    session.add(seat)
+        ticket_db = ticket_crud.get_by_id(session, ticket_id)
+        ticket_crud.delete(session, ticket_db)
 
-    session.delete(ticket)
-    session.commit()
-    return Message(msg="Ticket deleted successfully")
+        logger.info(f"Ticket deleted successfully: {ticket_id}")
+        return Message(msg="Ticket deleted successfully")
+
+    except TicketError as e:
+        logger.error(f"Error deleting ticket: {str(e)}")
+        raise handle_exception(e) from e
