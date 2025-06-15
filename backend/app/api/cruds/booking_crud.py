@@ -20,6 +20,7 @@ from app.domain.schemas import (
     BookingUpdate,
     PassengerCreate,
     TicketCreate,
+    TicketWithSeat,
 )
 
 logger = logging.getLogger(__name__)
@@ -145,7 +146,12 @@ def get_booking_with_details(session: Session, booking_id: str) -> dict[str, Any
 
             # Get tickets for this passenger
             tickets, _ = ticket_crud.get_tickets_by_passenger(session, passenger.id)
-            passenger_data["tickets"] = tickets
+            passenger_data["tickets"] = [
+                TicketWithSeat(
+                    **ticket.model_dump(), seat_number=ticket.seat.seat_number
+                )
+                for ticket in tickets
+            ]
 
             # Add passenger with tickets to the booking
             booking_data["passengers"].append(passenger_data)

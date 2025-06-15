@@ -3,6 +3,8 @@ from typing import Optional
 
 from pydantic import BaseModel
 
+from .ticket_schema import TicketWithSeat
+
 
 class PassengerBase(BaseModel):
     first_name: str
@@ -31,6 +33,10 @@ class PassengerUpdate(BaseModel):
 class PassengerPublic(PassengerBase):
     id: str
     booking_id: str
+
+
+class PassengerWithDetails(PassengerPublic):
+    tickets: list[TicketWithSeat]
 
 
 class PassengersPublic(BaseModel):

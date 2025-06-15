@@ -5,8 +5,7 @@ from pydantic import BaseModel, Field
 
 from app.domain.models import BookingStatus
 
-from .passenger_schema import PassengerInfo, PassengerPublic
-from .ticket_schema import TicketPublic
+from .passenger_schema import PassengerInfo, PassengerWithDetails
 
 
 class BookingBase(BaseModel):
@@ -53,10 +52,7 @@ class BookingPublic(BookingBase):
 class BookingDetailPublic(BookingPublic):
     """Detailed booking information with nested passengers and their tickets"""
 
-    class PassengerWithTickets(PassengerPublic):
-        tickets: list[TicketPublic]
-
-    passengers: list[PassengerWithTickets]
+    passengers: list[PassengerWithDetails]
 
 
 class BookingsPublic(BaseModel):

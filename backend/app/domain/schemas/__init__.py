@@ -23,6 +23,7 @@ from .passenger_schema import (
     PassengerPublic,
     PassengersPublic,
     PassengerUpdate,
+    PassengerWithDetails,
 )
 from .seat_schema import (
     SeatBase,
@@ -37,6 +38,7 @@ from .ticket_schema import (
     TicketPublic,
     TicketsPublic,
     TicketUpdate,
+    TicketWithSeat,
 )
 from .user_schema import (
     BaseUser,

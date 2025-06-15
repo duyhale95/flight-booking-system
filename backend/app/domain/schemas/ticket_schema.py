@@ -6,11 +6,10 @@ from pydantic import BaseModel
 class TicketBase(BaseModel):
     passenger_id: str
     flight_id: str
-    seat_id: Optional[str] = None
 
 
 class TicketCreate(TicketBase):
-    pass
+    seat_id: Optional[str]
 
 
 class TicketUpdate(BaseModel):
@@ -20,6 +19,11 @@ class TicketUpdate(BaseModel):
 class TicketPublic(TicketBase):
     id: str
     ticket_number: str
+    seat_id: str
+
+
+class TicketWithSeat(TicketPublic):
+    seat_number: str
 
 
 class TicketsPublic(BaseModel):

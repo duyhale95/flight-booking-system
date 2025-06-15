@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Optional
+from typing import TYPE_CHECKING
 
 from sqlmodel import Field, Relationship, SQLModel
 
@@ -17,9 +17,9 @@ class Ticket(SQLModel, table=True):
     # Foreign keys
     passenger_id: str = Field(foreign_key="passenger.id")
     flight_id: str = Field(foreign_key="flight.id")
-    seat_id: Optional[str] = Field(foreign_key="seat.id", default=None)
+    seat_id: str = Field(foreign_key="seat.id")
 
     # Relationships
     passenger: "Passenger" = Relationship(back_populates="tickets")
     flight: "Flight" = Relationship(back_populates="tickets")
-    seat: Optional["Seat"] = Relationship(back_populates="ticket")
+    seat: "Seat" = Relationship(back_populates="ticket")
