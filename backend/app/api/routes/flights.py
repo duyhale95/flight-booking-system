@@ -34,7 +34,9 @@ def read_flights(session: SessionDep, search: Annotated[FlightSearch, Query()]) 
 )
 def create_flight(session: SessionDep, flight_in: FlightCreate) -> Any:
     try:
-        flight_db = flight_crud.create(session, flight_in)
+        logger.info(f"Creating flight with ID: {flight_in.id}")
+
+        flight_db = flight_crud.create_with_seats(session, flight_in)
 
         logger.info(f"Flight created successfully: {flight_db.id}")
         return flight_db

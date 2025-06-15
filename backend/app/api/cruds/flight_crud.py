@@ -6,13 +6,15 @@ from pydantic import BaseModel
 from sqlalchemy.exc import IntegrityError
 from sqlmodel import Session, Time, col, func, select
 
+from app.api.cruds import seat_crud
 from app.common.exceptions import (
     FlightAlreadyExistsError,
     FlightError,
     FlightNotFoundError,
 )
 from app.domain.models import Flight
-from app.domain.schemas import FlightCreate, FlightSearch, FlightUpdate
+from app.domain.schemas import FlightCreate, FlightSearch, FlightUpdate, SeatCreate
+from app.utils import generate_seat_numbers
 
 logger = logging.getLogger(__name__)
 
@@ -57,6 +59,36 @@ def create(session: Session, flight_in: FlightCreate) -> Flight:
     except IntegrityError as e:
         session.rollback()
         logger.error(f"Database integrity error during flight creation: {str(e)}")
+        raise FlightError(500, f"Failed to create flight: {str(e)}") from e
+
+
+def create_with_seats(session: Session, flight_in: FlightCreate) -> Flight:
+    """
+    Create a new flight and associated seats.
+    """
+    logger.info(f"Creating flight with ID: {flight_in.id}")
+
+    try:
+        # Create the flight
+        flight_db = create(session, flight_in)
+        logger.info(f"Flight created successfully: {flight_db.id}")
+
+        # Create seats
+        for seat_number in generate_seat_numbers(flight_in.available_seats):
+            seat_create = SeatCreate(flight_id=flight_db.id, seat_number=seat_number)
+            seat_db = seat_crud.create(session, seat_create)
+
+            logger.info(f"Seat created successfully: {seat_db.id}")
+
+        # Commit the transaction
+        session.commit()
+        session.refresh(flight_db)
+
+        return flight_db
+
+    except Exception as e:
+        session.rollback()
+        logger.error(f"Error creating flight with ID: {flight_in.id}: {str(e)}")
         raise FlightError(500, f"Failed to create flight: {str(e)}") from e
 
 
