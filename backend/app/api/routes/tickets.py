@@ -6,7 +6,13 @@ from fastapi import APIRouter, Depends
 from app.api.deps import SessionDep, get_current_superuser
 from app.core.exceptions import PassengerError, TicketError, handle_exception
 from app.cruds import passenger_crud, ticket_crud
-from app.schemas import Message, TicketCreate, TicketPublic, TicketsPublic, TicketUpdate
+from app.domain.schemas import (
+    Message,
+    TicketCreate,
+    TicketPublic,
+    TicketsPublic,
+    TicketUpdate,
+)
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/tickets", tags=["tickets"])

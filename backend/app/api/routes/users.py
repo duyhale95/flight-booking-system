@@ -7,7 +7,7 @@ from app.api.deps import SessionDep, get_current_superuser
 from app.core.config import settings
 from app.core.exceptions import UserError, handle_exception
 from app.cruds import user_crud
-from app.schemas import Message, UserPublic, UsersPublic, UserUpdateStatus
+from app.domain.schemas import Message, UserPublic, UsersPublic, UserUpdateStatus
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/users", tags=["users"])

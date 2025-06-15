@@ -6,7 +6,7 @@ from sqlmodel import Field, Relationship, SQLModel
 from app.utils import generate_unique_id
 
 if TYPE_CHECKING:
-    from .booking import Booking
+    from .booking_model import Booking
 
 
 class User(SQLModel, table=True):

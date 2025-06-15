@@ -13,8 +13,8 @@ from app.core.exceptions import (
     TicketNotFoundError,
 )
 from app.cruds import seat_crud
-from app.models import Passenger, Seat, Ticket
-from app.schemas import TicketCreate, TicketUpdate
+from app.domain.models import Passenger, Seat, Ticket
+from app.domain.schemas import TicketCreate, TicketUpdate
 
 logger = logging.getLogger(__name__)
 

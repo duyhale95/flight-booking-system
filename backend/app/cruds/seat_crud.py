@@ -11,8 +11,8 @@ from app.core.exceptions import (
     SeatError,
     SeatNotFoundError,
 )
-from app.models import Flight, Seat
-from app.schemas import SeatCreate, SeatUpdate
+from app.domain.models import Flight, Seat
+from app.domain.schemas import SeatCreate, SeatUpdate
 
 logger = logging.getLogger(__name__)
 

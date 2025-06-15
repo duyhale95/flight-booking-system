@@ -4,11 +4,12 @@ from typing import Any
 from fastapi import APIRouter, HTTPException
 
 from app.api.deps import CurrentUser, SessionDep
-from app.api.routes.me import bookings
 from app.core.exceptions import AuthenticationError, UserError, handle_exception
 from app.core.security import verify_password
 from app.cruds import user_crud
-from app.schemas import Message, UpdatePassword, UserPublic, UserUpdate
+from app.domain.schemas import Message, UpdatePassword, UserPublic, UserUpdate
+
+from . import bookings_me
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/me", tags=["me"])
@@ -104,4 +105,4 @@ def delete_user_me(session: SessionDep, current_user: CurrentUser) -> Any:
 
 
 # Include other routes
-router.include_router(bookings.router)
+router.include_router(bookings_me.router)

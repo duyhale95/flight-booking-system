@@ -11,8 +11,8 @@ from app.core.exceptions import (
     FlightError,
     FlightNotFoundError,
 )
-from app.models import Flight
-from app.schemas import FlightCreate, FlightSearch, FlightUpdate
+from app.domain.models import Flight
+from app.domain.schemas import FlightCreate, FlightSearch, FlightUpdate
 
 logger = logging.getLogger(__name__)
 

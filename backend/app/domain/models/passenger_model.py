@@ -6,8 +6,8 @@ from sqlmodel import Field, Relationship, SQLModel
 from app.utils import generate_unique_id
 
 if TYPE_CHECKING:
-    from .booking import Booking
-    from .ticket import Ticket
+    from .booking_model import Booking
+    from .ticket_model import Ticket
 
 
 class Passenger(SQLModel, table=True):

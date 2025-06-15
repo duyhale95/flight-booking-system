@@ -3,9 +3,10 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from app.models.booking import BookingStatus
-from app.schemas.passenger import PassengerInfo, PassengerPublic
-from app.schemas.ticket import TicketPublic
+from app.domain.models import BookingStatus
+
+from .passenger_schema import PassengerInfo, PassengerPublic
+from .ticket_schema import TicketPublic
 
 
 class BookingBase(BaseModel):

@@ -4,7 +4,7 @@ from alembic import context
 from sqlalchemy import engine_from_config, pool
 from sqlmodel import SQLModel
 
-from app import models  # noqa: F401
+from app.domain import models  # noqa: F401
 from app.core.config import settings
 
 # this is the Alembic Config object, which provides

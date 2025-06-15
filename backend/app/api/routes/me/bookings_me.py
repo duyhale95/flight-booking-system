@@ -12,8 +12,8 @@ from app.core.exceptions import (
     handle_exception,
 )
 from app.cruds import ViewFilter, booking_crud, passenger_crud, ticket_crud
-from app.models.booking import BookingStatus
-from app.schemas import (
+from app.domain.models import BookingStatus
+from app.domain.schemas import (
     BookingCreate,
     BookingDetailPublic,
     BookingPublic,

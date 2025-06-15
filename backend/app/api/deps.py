@@ -11,8 +11,8 @@ from sqlmodel import Session
 from app.core.config import settings
 from app.core.database import engine
 from app.core.security import ALGORITHM
-from app.models import User
-from app.schemas import TokenPayload
+from app.domain.models import User
+from app.domain.schemas import TokenPayload
 
 oauth2_scheme = OAuth2PasswordBearer(
     tokenUrl=f"{settings.API_V1_STR}/signin/access-token"

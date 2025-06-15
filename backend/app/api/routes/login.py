@@ -16,7 +16,7 @@ from app.core.exceptions import (
 )
 from app.core.security import create_access_token
 from app.cruds import user_crud
-from app.schemas import Token, UserCreate, UserPublic, UserRegister
+from app.domain.schemas import Token, UserCreate, UserPublic, UserRegister
 
 logger = logging.getLogger(__name__)
 router = APIRouter(tags=["login"])

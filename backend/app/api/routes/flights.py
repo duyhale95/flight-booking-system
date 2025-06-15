@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, Query
 from app.api.deps import SessionDep, get_current_superuser
 from app.core.exceptions import FlightError, handle_exception
 from app.cruds import flight_crud
-from app.schemas import (
+from app.domain.schemas import (
     FlightCreate,
     FlightPublic,
     FlightSearch,

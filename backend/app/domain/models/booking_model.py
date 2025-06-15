@@ -7,8 +7,8 @@ from sqlmodel import Field, Relationship, SQLModel
 from app.utils import generate_booking_number, generate_unique_id
 
 if TYPE_CHECKING:
-    from .passenger import Passenger
-    from .user import User
+    from .passenger_model import Passenger
+    from .user_model import User
 
 
 class BookingStatus(str, Enum):

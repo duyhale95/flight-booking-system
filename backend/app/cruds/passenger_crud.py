@@ -10,8 +10,8 @@ from app.core.exceptions import (
     PassengerNotFoundError,
     UnauthorizedPassengerAccessError,
 )
-from app.models import Booking, Passenger, User
-from app.schemas import PassengerCreate, PassengerUpdate
+from app.domain.models import Booking, Passenger, User
+from app.domain.schemas import PassengerCreate, PassengerUpdate
 
 logger = logging.getLogger(__name__)
 

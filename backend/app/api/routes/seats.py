@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends
 from app.api.deps import SessionDep, get_current_superuser
 from app.core.exceptions import SeatError, handle_exception
 from app.cruds import seat_crud
-from app.schemas import Message, SeatCreate, SeatPublic, SeatsPublic, SeatUpdate
+from app.domain.schemas import Message, SeatCreate, SeatPublic, SeatsPublic, SeatUpdate
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/seats", tags=["seats"])

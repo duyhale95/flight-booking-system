@@ -13,8 +13,8 @@ from app.core.exceptions import (
     UnauthorizedBookingAccessError,
 )
 from app.cruds import ViewFilter, passenger_crud, ticket_crud
-from app.models import Booking, BookingStatus, User
-from app.schemas import (
+from app.domain.models import Booking, BookingStatus, User
+from app.domain.schemas import (
     BookingCreate,
     BookingStatusUpdate,
     BookingUpdate,

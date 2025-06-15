@@ -13,8 +13,8 @@ from app.core.exceptions import (
     UserNotFoundError,
 )
 from app.core.security import get_password_hash, verify_password
-from app.models import User
-from app.schemas import UserCreate, UserUpdate, UserUpdateStatus
+from app.domain.models import User
+from app.domain.schemas import UserCreate, UserUpdate, UserUpdateStatus
 
 logger = logging.getLogger(__name__)
 

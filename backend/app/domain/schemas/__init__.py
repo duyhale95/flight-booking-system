@@ -1,4 +1,4 @@
-from .booking import (
+from .booking_schema import (
     BookingBase,
     BookingCreate,
     BookingDetailPublic,
@@ -8,7 +8,7 @@ from .booking import (
     BookingStatusUpdate,
     BookingUpdate,
 )
-from .flight import (
+from .flight_schema import (
     FlightBase,
     FlightCreate,
     FlightPublic,
@@ -16,7 +16,7 @@ from .flight import (
     FlightsPublic,
     FlightUpdate,
 )
-from .passenger import (
+from .passenger_schema import (
     PassengerBase,
     PassengerCreate,
     PassengerInfo,
@@ -24,21 +24,21 @@ from .passenger import (
     PassengersPublic,
     PassengerUpdate,
 )
-from .seat import (
+from .seat_schema import (
     SeatBase,
     SeatCreate,
     SeatPublic,
     SeatsPublic,
     SeatUpdate,
 )
-from .ticket import (
+from .ticket_schema import (
     TicketBase,
     TicketCreate,
     TicketPublic,
     TicketsPublic,
     TicketUpdate,
 )
-from .user import (
+from .user_schema import (
     BaseUser,
     UpdatePassword,
     UserCreate,
@@ -48,7 +48,7 @@ from .user import (
     UserUpdate,
     UserUpdateStatus,
 )
-from .utils import (
+from .util_schema import (
     Message,
     Token,
     TokenPayload,

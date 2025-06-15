@@ -6,8 +6,8 @@ from fastapi import APIRouter, Depends
 from app.api.deps import SessionDep, get_current_superuser
 from app.core.exceptions import BookingError, UserError, handle_exception
 from app.cruds import ViewFilter, booking_crud
-from app.models.booking import BookingStatus
-from app.schemas import (
+from app.domain.models import BookingStatus
+from app.domain.schemas import (
     BookingDetailPublic,
     BookingPublic,
     BookingsPublic,

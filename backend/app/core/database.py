@@ -2,7 +2,7 @@ from sqlmodel import Session, create_engine
 
 from app.core.config import settings
 from app.cruds import user_crud
-from app.schemas import UserCreate
+from app.domain.schemas import UserCreate
 
 engine = create_engine(str(settings.SQLALCHEMY_DATABASE_URI))
 

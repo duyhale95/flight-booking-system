@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends
 from app.api.deps import SessionDep, get_current_superuser
 from app.core.exceptions import BookingError, PassengerError, handle_exception
 from app.cruds import booking_crud, passenger_crud
-from app.schemas import (
+from app.domain.schemas import (
     Message,
     PassengerCreate,
     PassengerPublic,
