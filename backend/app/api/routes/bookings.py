@@ -7,7 +7,13 @@ from app.api.deps import SessionDep, get_current_superuser
 from app.core.exceptions import BookingError, UserError, handle_exception
 from app.cruds import ViewFilter, booking_crud
 from app.models.booking import BookingStatus
-from app.schemas import BookingPublic, BookingsPublic, BookingStatusUpdate, Message
+from app.schemas import (
+    BookingDetailPublic,
+    BookingPublic,
+    BookingsPublic,
+    BookingStatusUpdate,
+    Message,
+)
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/bookings", tags=["bookings"])
@@ -84,6 +90,28 @@ def delete_booking(
 
     except BookingError as e:
         logger.error(f"Error deleting booking: {str(e)}")
+        raise handle_exception(e) from e
+
+
+@router.get(
+    "/{booking_id}/details",
+    dependencies=[Depends(get_current_superuser)],
+    response_model=BookingDetailPublic,
+)
+def read_booking_details(session: SessionDep, booking_id: str) -> Any:
+    """
+    Retrieve a booking by ID with passenger and ticket information (admin only).
+    """
+    logger.info(f"Admin retrieving detailed booking with ID: {booking_id}")
+
+    try:
+        booking_details = booking_crud.get_booking_with_details(session, booking_id)
+
+        logger.info(f"Detailed booking retrieved successfully: {booking_id}")
+        return booking_details
+
+    except BookingError as e:
+        logger.error(f"Error retrieving detailed booking: {str(e)}")
         raise handle_exception(e) from e
 
 

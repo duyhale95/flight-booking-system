@@ -15,6 +15,7 @@ from app.cruds import ViewFilter, booking_crud, passenger_crud, ticket_crud
 from app.models.booking import BookingStatus
 from app.schemas import (
     BookingCreate,
+    BookingDetailPublic,
     BookingPublic,
     BookingsPublic,
     Message,
@@ -54,9 +55,8 @@ def create_user_booking(
     session: SessionDep, current_user: CurrentUser, booking_in: BookingCreate
 ) -> Any:
     """
-    Create a booking for the current user.
+    Create a booking for the current user with passengers and tickets.
     """
-    # TODO: Create a booking -> Create passengers -> Create tickets
     logger.info(f"Creating booking for user ID: {current_user.id}")
 
     try:
@@ -67,7 +67,7 @@ def create_user_booking(
             )
             raise UnauthorizedBookingAccessError()
 
-        booking_db = booking_crud.create(session, booking_in)
+        booking_db = booking_crud.create_detailed_booking(session, booking_in)
 
         logger.info(f"Booking created successfully: {booking_db.id}")
         return booking_db
@@ -100,6 +100,34 @@ def read_user_booking(
     except BookingError as e:
         logger.error(f"Error retrieving booking: {str(e)}")
         raise handle_exception(e) from e
+
+@router.get("/{booking_id}/details", response_model=BookingDetailPublic)
+def read_user_booking_details(
+    session: SessionDep, current_user: CurrentUser, booking_id: str
+) -> Any:
+    """
+    Retrieve a booking by ID with passenger and ticket information for the current user.
+    """
+    logger.info(
+        f"Retrieving detailed booking with ID: {booking_id} "
+        f"for user ID: {current_user.id}"
+    )
+
+    try:
+        booking_db = booking_crud.get_by_id(session, booking_id)
+        booking_crud.verify_user_can_access_booking(booking_db, current_user)
+
+        booking_details = booking_crud.get_booking_with_details(session, booking_id)
+
+        logger.info(f"Detailed booking retrieved successfully: {booking_db.id}")
+        return booking_details
+
+    except BookingError as e:
+        logger.error(f"Error retrieving booking: {str(e)}")
+        raise handle_exception(e) from e
+
+
+
 
 
 @router.delete("/{booking_id}", response_model=Message)

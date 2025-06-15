@@ -10,11 +10,14 @@ class PassengerBase(BaseModel):
     nationality: str
     date_of_birth: date
     passport_number: Optional[str] = None
-    booking_id: str
+
+
+class PassengerInfo(PassengerBase):
+    pass
 
 
 class PassengerCreate(PassengerBase):
-    pass
+    booking_id: str
 
 
 class PassengerUpdate(BaseModel):
@@ -27,6 +30,7 @@ class PassengerUpdate(BaseModel):
 
 class PassengerPublic(PassengerBase):
     id: str
+    booking_id: str
 
 
 class PassengersPublic(BaseModel):

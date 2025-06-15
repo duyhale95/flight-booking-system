@@ -1,6 +1,8 @@
 from .booking import (
     BookingBase,
     BookingCreate,
+    BookingDetailPublic,
+    BookingFlightInfo,
     BookingPublic,
     BookingsPublic,
     BookingStatusUpdate,
@@ -17,6 +19,7 @@ from .flight import (
 from .passenger import (
     PassengerBase,
     PassengerCreate,
+    PassengerInfo,
     PassengerPublic,
     PassengersPublic,
     PassengerUpdate,

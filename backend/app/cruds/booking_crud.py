@@ -12,9 +12,15 @@ from app.core.exceptions import (
     BookingStatusError,
     UnauthorizedBookingAccessError,
 )
-from app.cruds import ViewFilter
+from app.cruds import ViewFilter, passenger_crud, ticket_crud
 from app.models import Booking, BookingStatus, User
-from app.schemas import BookingCreate, BookingStatusUpdate, BookingUpdate
+from app.schemas import (
+    BookingCreate,
+    BookingStatusUpdate,
+    BookingUpdate,
+    PassengerCreate,
+    TicketCreate,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -41,6 +47,58 @@ def create(session: Session, booking_in: BookingCreate) -> Booking:
         raise BookingError(500, f"Failed to create booking: {str(e)}") from e
 
 
+def create_detailed_booking(session: Session, booking_in: BookingCreate) -> Booking:
+    """
+    Create a booking with passengers and tickets.
+    """
+    logger.info(f"Creating detailed booking for user ID: {booking_in.user_id}")
+
+    try:
+        # Create the booking
+        booking_db = Booking.model_validate(booking_in)
+        logger.info(f"Booking created successfully: {booking_db.id}")
+
+        # Create the passengers
+        logger.info(
+            f"Creating {len(booking_in.passengers)} passengers "
+            f"for booking {booking_db.id}"
+        )
+        created_passengers = []
+        for passenger_data in booking_in.passengers:
+            passenger_create = PassengerCreate(
+                **passenger_data.model_dump(), booking_id=booking_db.id
+            )
+            passenger_db = passenger_crud.create(session, passenger_create)
+
+            logger.info(f"Passenger created successfully: {passenger_db.id}")
+            created_passengers.append(passenger_db)
+
+        # Create the tickets
+        flight_id = booking_in.flight_info.flight_id
+        seat_ids = booking_in.flight_info.seat_ids
+        logger.info(f"Creating {len(seat_ids)} tickets for flight {flight_id}")
+
+        for i, passenger in enumerate(created_passengers):
+            ticket_create = TicketCreate(
+                passenger_id=passenger.id,
+                flight_id=flight_id,
+                seat_id=seat_ids[i],
+            )
+            ticket_db = ticket_crud.create(session, ticket_create)
+            logger.info(f"Ticket created successfully: {ticket_db.id}")
+
+        # Commit the transaction
+        session.commit()
+        session.refresh(booking_db)
+
+        return booking_db
+
+    except Exception as e:
+        session.rollback()
+        logger.error(f"Error creating detailed booking: {str(e)}")
+        raise BookingError(500, f"Failed to create detailed booking: {str(e)}") from e
+
+
 def get_by_id(session: Session, booking_id: str) -> Booking:
     """
     Get booking by ID.
@@ -62,6 +120,42 @@ def get_by_booking_number(session: Session, booking_number: str) -> Booking | No
 
     query = select(Booking).where(Booking.booking_number == booking_number)
     return session.exec(query).first()
+
+
+def get_booking_with_details(session: Session, booking_id: str) -> dict[str, Any]:
+    """
+    Get booking with nested passengers and tickets.
+    """
+    logger.info(f"Getting booking with details for ID: {booking_id}")
+
+    try:
+        booking_db = get_by_id(session, booking_id)
+
+        # Convert to dict for building the response
+        booking_data = booking_db.model_dump()
+
+        # Get all passengers for this booking
+        passengers, _ = passenger_crud.get_passengers_by_booking(session, booking_id)
+
+        booking_data["passengers"] = []
+
+        # For each passenger, get their tickets and add to the result
+        for passenger in passengers:
+            passenger_data = passenger.model_dump()
+
+            # Get tickets for this passenger
+            tickets, _ = ticket_crud.get_tickets_by_passenger(session, passenger.id)
+            passenger_data["tickets"] = tickets
+
+            # Add passenger with tickets to the booking
+            booking_data["passengers"].append(passenger_data)
+
+        logger.info(f"Successfully retrieved booking with details for ID: {booking_id}")
+        return booking_data
+
+    except Exception as e:
+        logger.error(f"Error retrieving booking with details: {str(e)}")
+        raise BookingError(500, f"Failed to retrieve booking details: {str(e)}") from e
 
 
 def get_bookings_by_user(
