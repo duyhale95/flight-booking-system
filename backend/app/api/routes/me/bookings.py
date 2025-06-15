@@ -6,12 +6,24 @@ from fastapi import APIRouter
 from app.api.deps import CurrentUser, SessionDep
 from app.core.exceptions import (
     BookingError,
+    PassengerError,
+    TicketError,
     UnauthorizedBookingAccessError,
     handle_exception,
 )
-from app.cruds import ViewFilter, booking_crud
+from app.cruds import ViewFilter, booking_crud, passenger_crud, ticket_crud
 from app.models.booking import BookingStatus
-from app.schemas import BookingCreate, BookingPublic, BookingsPublic, Message
+from app.schemas import (
+    BookingCreate,
+    BookingPublic,
+    BookingsPublic,
+    Message,
+    PassengerPublic,
+    PassengersPublic,
+    PassengerUpdate,
+    TicketPublic,
+    TicketsPublic,
+)
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/bookings", tags=["bookings"])
@@ -173,4 +185,216 @@ def cancel_user_booking(
 
     except BookingError as e:
         logger.error(f"Error cancelling booking: {str(e)}")
+        raise handle_exception(e) from e
+
+
+@router.get(
+    "/{booking_id}/passengers", response_model=PassengersPublic, tags=["passengers"]
+)
+def read_booking_passengers(
+    session: SessionDep,
+    current_user: CurrentUser,
+    booking_id: str,
+    skip: int = 0,
+    limit: int = 10,
+) -> Any:
+    """
+    Retrieve passengers for a specific booking owned by the current user.
+    """
+    logger.info(
+        f"Retrieving passengers for booking ID: {booking_id}, "
+        f"user ID: {current_user.id}"
+    )
+
+    try:
+        booking_db = booking_crud.get_by_id(session, booking_id)
+
+        # Check permissions
+        booking_crud.verify_user_can_access_booking(booking_db, current_user)
+
+        passengers, count = passenger_crud.get_passengers_by_booking(
+            session, booking_id, skip, limit
+        )
+
+        logger.info(f"Retrieved {count} passengers for booking: {booking_id}")
+        return {"data": passengers, "count": count}
+
+    except (BookingError, PassengerError) as e:
+        logger.error(f"Error retrieving booking passengers: {str(e)}")
+        raise handle_exception(e) from e
+
+
+@router.get(
+    "/{booking_id}/passengers/{passenger_id}",
+    response_model=PassengerPublic,
+    tags=["passengers"],
+)
+def read_booking_passenger(
+    session: SessionDep,
+    current_user: CurrentUser,
+    booking_id: str,
+    passenger_id: str,
+) -> Any:
+    """
+    Retrieve a specific passenger from a booking owned by the current user.
+    """
+    logger.info(
+        f"Retrieving passenger ID: {passenger_id} from booking ID: {booking_id}"
+    )
+
+    try:
+        booking_db = booking_crud.get_by_id(session, booking_id)
+        booking_crud.verify_user_can_access_booking(booking_db, current_user)
+
+        passenger_db = passenger_crud.get_by_id(session, passenger_id)
+        if passenger_db.booking_id != booking_id:
+            raise PassengerError(
+                404, f"Passenger {passenger_id} not found in booking {booking_id}"
+            )
+
+        logger.info(f"Passenger retrieved successfully: {passenger_db.id}")
+        return passenger_db
+
+    except (BookingError, PassengerError) as e:
+        logger.error(f"Error retrieving booking passenger: {str(e)}")
+        raise handle_exception(e) from e
+
+
+@router.patch(
+    "/{booking_id}/passengers/{passenger_id}",
+    response_model=PassengerPublic,
+    tags=["passengers"],
+)
+def update_booking_passenger(
+    session: SessionDep,
+    current_user: CurrentUser,
+    booking_id: str,
+    passenger_id: str,
+    passenger_in: PassengerUpdate,
+) -> Any:
+    """
+    Update a specific passenger from a booking owned by the current user.
+    """
+    logger.info(f"Updating passenger ID: {passenger_id} from booking ID: {booking_id}")
+
+    try:
+        booking_db = booking_crud.get_by_id(session, booking_id)
+        booking_crud.verify_user_can_access_booking(booking_db, current_user)
+
+        passenger_db = passenger_crud.get_by_id(session, passenger_id)
+        if passenger_db.booking_id != booking_id:
+            raise PassengerError(
+                404, f"Passenger {passenger_id} not found in booking {booking_id}"
+            )
+
+        updated_passenger = passenger_crud.update(session, passenger_db, passenger_in)
+
+        logger.info(f"Passenger updated successfully: {passenger_id}")
+        return updated_passenger
+
+    except (BookingError, PassengerError) as e:
+        logger.error(f"Error updating booking passenger: {str(e)}")
+        raise handle_exception(e) from e
+
+
+@router.get("/{booking_id}/tickets", response_model=TicketsPublic, tags=["tickets"])
+def read_booking_tickets(
+    session: SessionDep,
+    current_user: CurrentUser,
+    booking_id: str,
+    skip: int = 0,
+    limit: int = 10,
+) -> Any:
+    """
+    Retrieve tickets for a specific booking owned by the current user.
+    """
+    logger.info(
+        f"Retrieving tickets for booking ID: {booking_id}, user ID: {current_user.id}"
+    )
+
+    try:
+        booking_db = booking_crud.get_by_id(session, booking_id)
+        booking_crud.verify_user_can_access_booking(booking_db, current_user)
+
+        tickets, count = ticket_crud.get_tickets_by_booking(
+            session, booking_id, skip, limit
+        )
+
+        logger.info(f"Retrieved {count} tickets for booking: {booking_id}")
+        return {"data": tickets, "count": count}
+
+    except (BookingError, TicketError) as e:
+        logger.error(f"Error retrieving booking tickets: {str(e)}")
+        raise handle_exception(e) from e
+
+
+@router.get(
+    "/{booking_id}/tickets/{ticket_id}", response_model=TicketPublic, tags=["tickets"]
+)
+def read_booking_ticket(
+    session: SessionDep, current_user: CurrentUser, booking_id: str, ticket_id: str
+) -> Any:
+    """
+    Retrieve a specific ticket from a booking owned by the current user.
+    """
+    logger.info(f"Retrieving ticket ID: {ticket_id} from booking ID: {booking_id}")
+
+    try:
+        booking_db = booking_crud.get_by_id(session, booking_id)
+        booking_crud.verify_user_can_access_booking(booking_db, current_user)
+
+        ticket_db = ticket_crud.get_by_id(session, ticket_id)
+        passenger = passenger_crud.get_by_id(session, ticket_db.passenger_id)
+        if passenger.booking_id != booking_id:
+            raise TicketError(
+                404, f"Ticket {ticket_id} not found in booking {booking_id}"
+            )
+
+        logger.info(f"Ticket retrieved successfully: {ticket_db.id}")
+        return ticket_db
+
+    except (BookingError, TicketError, PassengerError) as e:
+        logger.error(f"Error retrieving booking ticket: {str(e)}")
+        raise handle_exception(e) from e
+
+
+@router.get(
+    "/{booking_id}/passengers/{passenger_id}/tickets",
+    response_model=TicketsPublic,
+    tags=["tickets"],
+)
+def read_passenger_tickets(
+    session: SessionDep,
+    current_user: CurrentUser,
+    booking_id: str,
+    passenger_id: str,
+    skip: int = 0,
+    limit: int = 10,
+) -> Any:
+    """
+    Retrieve tickets for a specific passenger in a booking owned by the current user.
+    """
+    logger.info(
+        f"Retrieving tickets for passenger ID: {passenger_id}, booking ID: {booking_id}"
+    )
+
+    try:
+        booking_db = booking_crud.get_by_id(session, booking_id)
+        booking_crud.verify_user_can_access_booking(booking_db, current_user)
+
+        passenger_db = passenger_crud.get_by_id(session, passenger_id)
+        if passenger_db.booking_id != booking_id:
+            raise PassengerError(
+                404, f"Passenger {passenger_id} not found in booking {booking_id}"
+            )
+
+        tickets, count = ticket_crud.get_tickets_by_passenger(
+            session, passenger_id, skip, limit
+        )
+
+        logger.info(f"Retrieved {count} tickets for passenger: {passenger_id}")
+        return {"data": tickets, "count": count}
+
+    except (BookingError, PassengerError, TicketError) as e:
+        logger.error(f"Error retrieving passenger tickets: {str(e)}")
         raise handle_exception(e) from e

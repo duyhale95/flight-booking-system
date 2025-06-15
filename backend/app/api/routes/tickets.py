@@ -1,37 +1,38 @@
 import logging
-from typing import Any
+from typing import Any, Optional
 
 from fastapi import APIRouter, Depends
 
-from app.api.deps import (
-    CurrentUser,
-    SessionDep,
-    get_current_superuser,
-    get_current_user,
-)
-from app.core.exceptions import TicketError, handle_exception
-from app.cruds import ticket_crud
+from app.api.deps import SessionDep, get_current_superuser
+from app.core.exceptions import PassengerError, TicketError, handle_exception
+from app.cruds import passenger_crud, ticket_crud
 from app.schemas import Message, TicketCreate, TicketPublic, TicketsPublic, TicketUpdate
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/tickets", tags=["tickets"])
 
 
-@router.get("", response_model=TicketsPublic)
+@router.get(
+    "", dependencies=[Depends(get_current_superuser)], response_model=TicketsPublic
+)
 def read_tickets(
     session: SessionDep,
-    current_user: CurrentUser,
     skip: int = 0,
     limit: int = 100,
+    flight_id: Optional[str] = None,
 ) -> Any:
-    try:
-        logger.info("Retrieving tickets with filters")
+    """
+    Retrieve tickets with filters (admin only).
+    """
+    logger.info("Retrieving tickets with filters")
 
-        if current_user.is_superuser:
-            tickets, count = ticket_crud.get_all_tickets(session, skip, limit)
+    try:
+        if flight_id:
+            tickets, count = ticket_crud.get_tickets_by_flight(
+                session, flight_id, skip, limit
+            )
         else:
-            # TODO: Implement getting passenger_id from current_user
-            tickets, count = [], 0
+            tickets, count = ticket_crud.get_all_tickets(session, skip, limit)
 
         return {"data": tickets, "count": count}
 
@@ -40,30 +41,41 @@ def read_tickets(
         raise handle_exception(e) from e
 
 
-@router.post("", dependencies=[Depends(get_current_user)], response_model=TicketPublic)
+@router.post(
+    "", dependencies=[Depends(get_current_superuser)], response_model=TicketPublic
+)
 def create_ticket(session: SessionDep, ticket_in: TicketCreate) -> Any:
+    """
+    Create a ticket directly (admin only).
+    """
     try:
         logger.info(
-            f"Creating ticket for passenger {ticket_in.passenger_id} "
+            f"Admin creating ticket for passenger {ticket_in.passenger_id} "
             f"on flight {ticket_in.flight_id}"
         )
+
+        # Verify the passenger exists
+        passenger_crud.get_by_id(session, ticket_in.passenger_id)
 
         ticket_db = ticket_crud.create(session, ticket_in)
 
         logger.info(f"Ticket created successfully: {ticket_db.id}")
         return ticket_db
 
-    except TicketError as e:
+    except (TicketError, PassengerError) as e:
         logger.error(f"Error creating ticket: {str(e)}")
         raise handle_exception(e) from e
 
 
 @router.get(
     "/{ticket_id}",
-    dependencies=[Depends(get_current_user)],
+    dependencies=[Depends(get_current_superuser)],
     response_model=TicketPublic,
 )
 def read_ticket(session: SessionDep, ticket_id: str) -> Any:
+    """
+    Retrieve a specific ticket (admin only).
+    """
     try:
         logger.info(f"Retrieving ticket with ID: {ticket_id}")
 
@@ -83,9 +95,12 @@ def read_ticket(session: SessionDep, ticket_id: str) -> Any:
     response_model=TicketPublic,
 )
 def update_ticket(session: SessionDep, ticket_id: str, ticket_in: TicketUpdate) -> Any:
-    try:
-        logger.info(f"Updating ticket with ID: {ticket_id}")
+    """
+    Update a ticket (admin only).
+    """
+    logger.info(f"Updating ticket with ID: {ticket_id}")
 
+    try:
         ticket_db = ticket_crud.get_by_id(session, ticket_id)
         updated_ticket = ticket_crud.update(session, ticket_db, ticket_in)
 
@@ -103,9 +118,12 @@ def update_ticket(session: SessionDep, ticket_id: str, ticket_in: TicketUpdate) 
     response_model=Message,
 )
 def delete_ticket(session: SessionDep, ticket_id: str) -> Any:
-    try:
-        logger.info(f"Deleting ticket with ID: {ticket_id}")
+    """
+    Delete a ticket (admin only).
+    """
+    logger.info(f"Deleting ticket with ID: {ticket_id}")
 
+    try:
         ticket_db = ticket_crud.get_by_id(session, ticket_id)
         ticket_crud.delete(session, ticket_db)
 

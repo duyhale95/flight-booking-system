@@ -3,7 +3,7 @@ from typing import Any, Optional
 
 from pydantic import BaseModel
 from sqlalchemy.exc import IntegrityError
-from sqlmodel import Session, func, select
+from sqlmodel import Session, col, func, select
 
 from app.core.exceptions import (
     NoAvailableSeatsError,
@@ -13,7 +13,7 @@ from app.core.exceptions import (
     TicketNotFoundError,
 )
 from app.cruds import seat_crud
-from app.models import Seat, Ticket
+from app.models import Passenger, Seat, Ticket
 from app.schemas import TicketCreate, TicketUpdate
 
 logger = logging.getLogger(__name__)
@@ -124,6 +124,43 @@ def get_tickets_by_passenger(
 
     logger.info(
         f"Found {count} tickets for passenger {passenger_id}, "
+        f"returning {len(tickets)} results"
+    )
+    return tickets, count
+
+
+def get_tickets_by_booking(
+    session: Session, booking_id: str, skip: int = 0, limit: int = 100
+) -> tuple[list[Ticket], int]:
+    """
+    Get all tickets for a specific booking.
+
+    Returns:
+        Tuple of (list of tickets, count)
+    """
+    logger.info(f"Getting tickets for booking ID: {booking_id}")
+
+    # First get all passengers for this booking
+    passenger_query = select(Passenger.id).where(Passenger.booking_id == booking_id)
+    passenger_ids = list(session.exec(passenger_query).all())
+
+    if not passenger_ids:
+        logger.info(f"No passengers found for booking {booking_id}")
+        return [], 0
+
+    # Then get tickets for these passengers
+    query = select(Ticket).where(col(Ticket.passenger_id).in_(passenger_ids))
+
+    # Get total count
+    count_stmt = select(func.count()).select_from(query.subquery())
+    count = session.exec(count_stmt).one()
+
+    # Apply pagination
+    query = query.offset(skip).limit(limit)
+    tickets = list(session.exec(query).all())
+
+    logger.info(
+        f"Found {count} tickets for booking {booking_id}, "
         f"returning {len(tickets)} results"
     )
     return tickets, count
