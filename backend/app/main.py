@@ -7,9 +7,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Session
 
 from app.api.main import api_router
+from app.common.logging import setup_logging
 from app.core.config import settings
 from app.core.database import engine, init_db
-from app.core.logging import setup_logging
 
 
 @asynccontextmanager

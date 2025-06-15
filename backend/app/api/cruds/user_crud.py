@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from sqlalchemy.exc import IntegrityError
 from sqlmodel import Session, func, select
 
-from app.core.exceptions import (
+from app.common.exceptions import (
     AuthenticationError,
     InactiveUserError,
     UserAlreadyExistsError,

@@ -3,10 +3,10 @@ from typing import Any, Optional
 
 from fastapi import APIRouter, Depends
 
+from app.api.cruds import user_crud
 from app.api.deps import SessionDep, get_current_superuser
+from app.common.exceptions import UserError, handle_exception
 from app.core.config import settings
-from app.core.exceptions import UserError, handle_exception
-from app.cruds import user_crud
 from app.domain.schemas import Message, UserPublic, UsersPublic, UserUpdateStatus
 
 logger = logging.getLogger(__name__)

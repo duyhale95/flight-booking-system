@@ -6,13 +6,13 @@ from pydantic import BaseModel
 from sqlalchemy.exc import IntegrityError
 from sqlmodel import Session, func, select
 
-from app.core.exceptions import (
+from app.api.cruds import ViewFilter, passenger_crud, ticket_crud
+from app.common.exceptions import (
     BookingError,
     BookingNotFoundError,
     BookingStatusError,
     UnauthorizedBookingAccessError,
 )
-from app.cruds import ViewFilter, passenger_crud, ticket_crud
 from app.domain.models import Booking, BookingStatus, User
 from app.domain.schemas import (
     BookingCreate,

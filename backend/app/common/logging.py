@@ -10,7 +10,7 @@ def setup_logging() -> None:
     log_dir.mkdir(exist_ok=True)
 
     # Load configuration from JSON file
-    config_path = Path(__file__).parent / "logging_config.json"
+    config_path = Path(__file__).parent.parent / "core" / "logging_config.json"
 
     if config_path.exists():
         with open(config_path) as config_file:

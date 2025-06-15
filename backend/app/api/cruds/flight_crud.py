@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from sqlalchemy.exc import IntegrityError
 from sqlmodel import Session, Time, col, func, select
 
-from app.core.exceptions import (
+from app.common.exceptions import (
     FlightAlreadyExistsError,
     FlightError,
     FlightNotFoundError,

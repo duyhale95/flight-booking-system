@@ -3,10 +3,14 @@ from typing import Any
 
 from fastapi import APIRouter, HTTPException
 
+from app.api.cruds import user_crud
 from app.api.deps import CurrentUser, SessionDep
-from app.core.exceptions import AuthenticationError, UserError, handle_exception
+from app.common.exceptions import (
+    AuthenticationError,
+    UserError,
+    handle_exception,
+)
 from app.core.security import verify_password
-from app.cruds import user_crud
 from app.domain.schemas import Message, UpdatePassword, UserPublic, UserUpdate
 
 from . import bookings_me

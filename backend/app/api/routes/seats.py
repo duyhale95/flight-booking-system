@@ -3,9 +3,9 @@ from typing import Any, Optional
 
 from fastapi import APIRouter, Depends
 
+from app.api.cruds import seat_crud
 from app.api.deps import SessionDep, get_current_superuser
-from app.core.exceptions import SeatError, handle_exception
-from app.cruds import seat_crud
+from app.common.exceptions import SeatError, handle_exception
 from app.domain.schemas import Message, SeatCreate, SeatPublic, SeatsPublic, SeatUpdate
 
 logger = logging.getLogger(__name__)

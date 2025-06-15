@@ -3,9 +3,9 @@ from typing import Any, Optional
 
 from fastapi import APIRouter, Depends
 
+from app.api.cruds import ViewFilter, booking_crud
 from app.api.deps import SessionDep, get_current_superuser
-from app.core.exceptions import BookingError, UserError, handle_exception
-from app.cruds import ViewFilter, booking_crud
+from app.common.exceptions import BookingError, UserError, handle_exception
 from app.domain.models import BookingStatus
 from app.domain.schemas import (
     BookingDetailPublic,

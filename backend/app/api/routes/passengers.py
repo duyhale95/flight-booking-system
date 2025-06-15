@@ -3,9 +3,9 @@ from typing import Any, Optional
 
 from fastapi import APIRouter, Depends
 
+from app.api.cruds import booking_crud, passenger_crud
 from app.api.deps import SessionDep, get_current_superuser
-from app.core.exceptions import BookingError, PassengerError, handle_exception
-from app.cruds import booking_crud, passenger_crud
+from app.common.exceptions import BookingError, PassengerError, handle_exception
 from app.domain.schemas import (
     Message,
     PassengerCreate,

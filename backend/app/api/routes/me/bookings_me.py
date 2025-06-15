@@ -3,15 +3,15 @@ from typing import Any, Optional
 
 from fastapi import APIRouter
 
+from app.api.cruds import ViewFilter, booking_crud, passenger_crud, ticket_crud
 from app.api.deps import CurrentUser, SessionDep
-from app.core.exceptions import (
+from app.common.exceptions import (
     BookingError,
     PassengerError,
     TicketError,
     UnauthorizedBookingAccessError,
     handle_exception,
 )
-from app.cruds import ViewFilter, booking_crud, passenger_crud, ticket_crud
 from app.domain.models import BookingStatus
 from app.domain.schemas import (
     BookingCreate,

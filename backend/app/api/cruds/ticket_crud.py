@@ -5,14 +5,14 @@ from pydantic import BaseModel
 from sqlalchemy.exc import IntegrityError
 from sqlmodel import Session, col, func, select
 
-from app.core.exceptions import (
+from app.api.cruds import seat_crud
+from app.common.exceptions import (
     NoAvailableSeatsError,
     SeatNotAvailableError,
     SeatNotFoundError,
     TicketError,
     TicketNotFoundError,
 )
-from app.cruds import seat_crud
 from app.domain.models import Passenger, Seat, Ticket
 from app.domain.schemas import TicketCreate, TicketUpdate
 

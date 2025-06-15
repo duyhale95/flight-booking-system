@@ -5,17 +5,17 @@ from typing import Annotated, Any
 from fastapi import APIRouter, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 
+from app.api.cruds import user_crud
 from app.api.deps import SessionDep
-from app.core.config import settings
-from app.core.exceptions import (
+from app.common.exceptions import (
     AuthenticationError,
     InactiveUserError,
     UserAlreadyExistsError,
     UserError,
     handle_exception,
 )
+from app.core.config import settings
 from app.core.security import create_access_token
-from app.cruds import user_crud
 from app.domain.schemas import Token, UserCreate, UserPublic, UserRegister
 
 logger = logging.getLogger(__name__)
