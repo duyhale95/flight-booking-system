@@ -1,4 +1,5 @@
 import logging
+import time
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
 
@@ -14,26 +15,36 @@ from app.core.database import engine, init_db
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
+    """
+    FastAPI lifespan event handler for startup and shutdown events.
+    """
     # Setup application logging
     setup_logging()
     logger = logging.getLogger(__name__)
-    logger.info(f"Starting {settings.PROJECT_NAME}")
-    logger.info(f"API version: {settings.API_V1_STR}")
+
+    start_time = time.time()
+    logger.info(
+        "Starting application %s (version %s)",
+        settings.PROJECT_NAME,
+        settings.API_V1_STR,
+    )
 
     # Initialize data in the database
     try:
+        logger.info("Initializing database...")
         with Session(engine) as session:
             init_db(session)
-            logger.info("Database initialized successfully")
+        logger.info("Database initialized successfully")
     except Exception as e:
-        logger.error(f"Fail to initialize database: {e}", exc_info=True)
+        logger.error("Failed to initialize database: %s", str(e), exc_info=True)
         raise
 
-    logger.info("Application startup completed successfully")
+    startup_time = time.time() - start_time
+    logger.info("Application startup completed in %.2f seconds", startup_time)
 
     yield
 
-    logger.info("Shutting down application")
+    logger.info("Shutting down application %s", settings.PROJECT_NAME)
 
 
 app = FastAPI(
