@@ -21,6 +21,9 @@ router = APIRouter(prefix="/flights", tags=["flights"])
 
 @router.get("", response_model=FlightsPublic)
 def read_flights(session: SessionDep, search: Annotated[FlightSearch, Query()]) -> Any:
+    """
+    Retrieve flights with filters.
+    """
     logger.info("Retrieving flights with filters")
 
     flights, count = flight_crud.search_flights(session, search)
@@ -33,6 +36,9 @@ def read_flights(session: SessionDep, search: Annotated[FlightSearch, Query()]) 
     response_model=FlightPublic,
 )
 def create_flight(session: SessionDep, flight_in: FlightCreate) -> Any:
+    """
+    Create a new flight and associated seats (admin only).
+    """
     try:
         logger.info(f"Creating flight with ID: {flight_in.id}")
 
@@ -48,6 +54,9 @@ def create_flight(session: SessionDep, flight_in: FlightCreate) -> Any:
 
 @router.get("/{flight_id}", response_model=FlightPublic)
 def read_flight(session: SessionDep, flight_id: str) -> Any:
+    """
+    Retrieve a flight by ID.
+    """
     try:
         logger.info(f"Retrieving flight with ID: {flight_id}")
 
@@ -67,6 +76,9 @@ def read_flight(session: SessionDep, flight_id: str) -> Any:
     response_model=FlightPublic,
 )
 def update_flight(session: SessionDep, flight_id: str, flight_in: FlightUpdate) -> Any:
+    """
+    Update a flight by ID (admin only).
+    """
     try:
         logger.info(f"Updating flight with ID: {flight_id}")
 
@@ -87,6 +99,9 @@ def update_flight(session: SessionDep, flight_id: str, flight_in: FlightUpdate) 
     response_model=Message,
 )
 def delete_flight(session: SessionDep, flight_id: str) -> Any:
+    """
+    Delete a flight by ID (admin only).
+    """
     try:
         flight_db = flight_crud.get_by_id(session, flight_id)
 

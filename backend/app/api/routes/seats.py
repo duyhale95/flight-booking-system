@@ -20,6 +20,9 @@ def read_seats(
     flight_id: Optional[str] = None,
     available_only: bool = False,
 ) -> Any:
+    """
+    Retrieve seats with filters.
+    """
     try:
         logger.info("Retrieving seats with filters")
 
@@ -43,6 +46,9 @@ def read_seats(
     response_model=SeatPublic,
 )
 def create_seat(session: SessionDep, seat_in: SeatCreate) -> Any:
+    """
+    Create a new seat (admin only).
+    """
     try:
         logger.info(
             f"Creating new seat {seat_in.seat_number} for flight {seat_in.flight_id}"
@@ -60,6 +66,9 @@ def create_seat(session: SessionDep, seat_in: SeatCreate) -> Any:
 
 @router.get("/{seat_id}", response_model=SeatPublic)
 def read_seat(session: SessionDep, seat_id: str) -> Any:
+    """
+    Retrieve a seat by ID.
+    """
     try:
         logger.info(f"Retrieving seat with ID: {seat_id}")
 
@@ -79,6 +88,9 @@ def read_seat(session: SessionDep, seat_id: str) -> Any:
     response_model=SeatPublic,
 )
 def update_seat(session: SessionDep, seat_id: str, seat_in: SeatUpdate) -> Any:
+    """
+    Update a seat by ID (admin only).
+    """
     try:
         logger.info(f"Updating seat with ID: {seat_id}")
 
@@ -99,6 +111,9 @@ def update_seat(session: SessionDep, seat_id: str, seat_in: SeatUpdate) -> Any:
     response_model=Message,
 )
 def delete_seat(session: SessionDep, seat_id: str) -> Any:
+    """
+    Delete a seat by ID (admin only).
+    """
     try:
         logger.info(f"Deleting seat with ID: {seat_id}")
 
