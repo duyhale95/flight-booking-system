@@ -4,6 +4,8 @@ WORKDIR /app
 
 RUN groupadd -r app && useradd -r -g app app
 
+RUN mkdir -p /app/logs && chown -R app:app /app
+
 FROM base AS builder
 
 COPY --from=ghcr.io/astral-sh/uv:0.6.1 /uv /uvx /bin/
@@ -22,8 +24,6 @@ FROM base AS runtime
 
 COPY --from=builder --chown=app:app /app /app
 
-RUN mkdir -p /app/logs && chown -R app:app /app
-
 USER app
 
 ENV PATH="/app/.venv/bin:$PATH" \
@@ -31,5 +31,3 @@ ENV PATH="/app/.venv/bin:$PATH" \
     PYTHONPATH=/app
 
 EXPOSE 8000
-
-CMD ["fastapi", "run", "app/main.py"]

@@ -24,7 +24,7 @@ services:
     restart: on-failure
     build:
       context: ./backend
-    command: ["bash", "scripts/prestart.sh"]
+    command: ["alembic", "upgrade", "head"]
     depends_on:
       db:
         condition: service_healthy
@@ -32,10 +32,6 @@ services:
     env_file:
       - .env
     environment:
-      - BACKEND_CORS_ORIGINS=${BACKEND_CORS_ORIGINS}
-      - SECRET_KEY=${SECRET_KEY:?Variable not set}
-      - FIRST_SUPERUSER=${FIRST_SUPERUSER:?Variable not set}
-      - FIRST_SUPERUSER_PASSWORD=${FIRST_SUPERUSER_PASSWORD:?Variable not set}
       - POSTGRES_SERVER=db
       - POSTGRES_PORT=${POSTGRES_PORT:?Variable not set}
       - POSTGRES_DB=${POSTGRES_DB:?Variable not set}
@@ -47,6 +43,7 @@ services:
     restart: always
     build:
       context: ./backend
+    command: ["fastapi", "run", "app/main.py"]
     depends_on:
       db:
         condition: service_healthy
