@@ -66,7 +66,7 @@ def create_with_seats(session: Session, flight_in: FlightCreate) -> Flight:
     """
     Create a new flight and associated seats.
     """
-    logger.info(f"Creating flight with ID: {flight_in.id}")
+    logger.info(f"Creating flight with number: {flight_in.flight_number}")
 
     try:
         # Create the flight
@@ -88,7 +88,9 @@ def create_with_seats(session: Session, flight_in: FlightCreate) -> Flight:
 
     except Exception as e:
         session.rollback()
-        logger.error(f"Error creating flight with ID: {flight_in.id}: {str(e)}")
+        logger.error(
+            f"Error creating flight with number: {flight_in.flight_number}: {str(e)}"
+        )
         raise FlightError(500, f"Failed to create flight: {str(e)}") from e
 
 

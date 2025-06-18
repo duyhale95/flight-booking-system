@@ -40,7 +40,7 @@ def create_flight(session: SessionDep, flight_in: FlightCreate) -> Any:
     Create a new flight and associated seats (admin only).
     """
     try:
-        logger.info(f"Creating flight with ID: {flight_in.id}")
+        logger.info(f"Creating flight with number: {flight_in.flight_number}")
 
         flight_db = flight_crud.create_with_seats(session, flight_in)
 
