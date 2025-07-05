@@ -10,6 +10,7 @@ dependencies = [
     "passlib[bcrypt]>=1.7.4",
     "psycopg[binary]>=3.2.5",
     "pyjwt>=2.10.1",
+    "requests>=2.32.4",
     "sqlmodel>=0.0.24",
 ]
 
@@ -40,9 +41,7 @@ select = [
     "I",  # isort
     "N",  # pep8-naming
     "B",  # flake8-bugbear
-    "C4",  # flake8-comprehensions
-    "UP",  # pyupgrade
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
 ]
-ignore = [
-    "UP007"
-]
+ignore = ["E712", "UP007"]

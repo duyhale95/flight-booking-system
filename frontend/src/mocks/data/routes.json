@@ -1,0 +1,29 @@
+[
+  {
+    "departure": {
+      "airport": "Brussels Airport",
+      "timezone": "Europe/Brussels",
+      "iata": "BRU",
+      "icao": "EBBR",
+      "terminal": null,
+      "time": "06:10:00"
+    },
+    "arrival": {
+      "airport": "Girona-Costa Brava",
+      "timezone": "Europe/Madrid",
+      "iata": "GRO",
+      "icao": "LEGE",
+      "terminal": "1",
+      "time": "07:55:00"
+    },
+    "airline": {
+      "name": "Brussels Airlines",
+      "callsign": "B-LINE",
+      "iata": "SN",
+      "icao": "BEL"
+    },
+    "flight": {
+      "number": "3683"
+    }
+  }
+]

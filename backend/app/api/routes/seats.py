@@ -4,8 +4,8 @@ from typing import Any, Optional
 from fastapi import APIRouter, Depends
 
 from app.api.cruds import seat_crud
-from app.api.deps import SessionDep, get_current_superuser
-from app.common.exceptions import SeatError, handle_exception
+from app.api.deps import CurrentUser, SessionDep, get_current_superuser
+from app.common.exceptions import SeatError, SeatNotAvailableError, handle_exception
 from app.domain.schemas import Message, SeatCreate, SeatPublic, SeatsPublic, SeatUpdate
 
 logger = logging.getLogger(__name__)
@@ -37,6 +37,31 @@ def read_seats(
 
     except SeatError as e:
         logger.error(f"Error reading seats: {str(e)}")
+        raise handle_exception(e) from e
+
+
+@router.get("/flight/{flight_id}", response_model=SeatsPublic)
+def read_seats_by_flight(
+    session: SessionDep,
+    flight_id: str,
+    skip: int = 0,
+    limit: int = 100,
+    available_only: bool = False,
+) -> Any:
+    """
+    Retrieve all seats for a specific flight.
+    """
+    try:
+        logger.info(f"Retrieving seats for flight: {flight_id}")
+
+        seats, count = seat_crud.get_seats_by_flight(
+            session, flight_id, skip, limit, available_only
+        )
+
+        return {"data": seats, "count": count}
+
+    except SeatError as e:
+        logger.error(f"Error retrieving seats for flight {flight_id}: {str(e)}")
         raise handle_exception(e) from e
 
 
@@ -125,4 +150,32 @@ def delete_seat(session: SessionDep, seat_id: str) -> Any:
 
     except SeatError as e:
         logger.error(f"Error deleting seat: {str(e)}")
+        raise handle_exception(e) from e
+
+
+@router.post("/{seat_id}/reserve", response_model=SeatPublic)
+def reserve_seat(session: SessionDep, seat_id: str, current_user: CurrentUser) -> Any:
+    """
+    Reserve a seat for the current user during booking process.
+    This endpoint allows regular users to reserve a seat.
+    """
+    try:
+        logger.info(f"User {current_user.id} reserving seat with ID: {seat_id}")
+
+        seat_db = seat_crud.get_by_id(session, seat_id)
+
+        # Check if seat is available
+        if not seat_db.is_available:
+            logger.error(f"Seat {seat_id} is not available")
+            raise SeatNotAvailableError(seat_number=seat_db.seat_number)
+
+        # Reserve the seat by updating is_available to False
+        update_data = SeatUpdate(is_available=False)
+        updated_seat = seat_crud.update(session, seat_db, update_data)
+
+        logger.info(f"Seat {seat_id} reserved successfully by user {current_user.id}")
+        return updated_seat
+
+    except SeatError as e:
+        logger.error(f"Error reserving seat: {str(e)}")
         raise handle_exception(e) from e

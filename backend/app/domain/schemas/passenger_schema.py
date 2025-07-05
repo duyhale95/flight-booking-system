@@ -1,7 +1,7 @@
-from datetime import date
+from datetime import date, datetime
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
 
 from .ticket_schema import TicketWithSeat
 
@@ -12,6 +12,31 @@ class PassengerBase(BaseModel):
     nationality: str
     date_of_birth: date
     passport_number: Optional[str] = None
+
+    @field_validator("date_of_birth", mode="before")
+    @classmethod
+    def validate_date_of_birth(cls, v):
+        """Convert string to date if needed"""
+        if isinstance(v, date):
+            return v
+        if isinstance(v, str):
+            try:
+                # Try ISO format (YYYY-MM-DD)
+                return datetime.strptime(v, "%Y-%m-%d").date()
+            except ValueError:
+                try:
+                    # Try other common formats
+                    return datetime.strptime(v, "%d/%m/%Y").date()
+                except ValueError:
+                    try:
+                        return datetime.strptime(v, "%m/%d/%Y").date()
+                    except ValueError as e:
+                        raise ValueError(
+                            "Invalid date format. Expected YYYY-MM-DD or DD/MM/YYYY or MM/DD/YYYY"
+                        ) from e
+        raise ValueError(
+            "Invalid date format. Expected YYYY-MM-DD or DD/MM/YYYY or MM/DD/YYYY"
+        )
 
 
 class PassengerInfo(PassengerBase):

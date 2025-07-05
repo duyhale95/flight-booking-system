@@ -167,8 +167,8 @@ def update(
     if isinstance(seat_in, BaseModel):
         seat_in = seat_in.model_dump(exclude_unset=True)
 
-    # Check if seat number is changing
-    if seat_in.get("seat_number") != seat_db.seat_number:
+    # Check if seat number is being updated and it's different from current
+    if "seat_number" in seat_in and seat_in["seat_number"] != seat_db.seat_number:
         query = select(Seat).where(
             Seat.flight_id == seat_db.flight_id,
             Seat.seat_number == seat_in["seat_number"],

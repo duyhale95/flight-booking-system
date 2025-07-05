@@ -55,8 +55,18 @@ def create_detailed_booking(session: Session, booking_in: BookingCreate) -> Book
     logger.info(f"Creating detailed booking for user ID: {booking_in.user_id}")
 
     try:
-        # Create the booking
-        booking_db = Booking.model_validate(booking_in)
+        # Create the booking - Use direct instantiation instead of model_validate
+        # to avoid issues with nested Pydantic models like PassengerInfo
+        booking_db = Booking(
+            total_price=booking_in.total_price,
+            status=booking_in.status,
+            user_id=booking_in.user_id,
+        )
+
+        # Add to session to get an ID
+        session.add(booking_db)
+        session.flush()  # This assigns an ID without committing
+
         logger.info(f"Booking created successfully: {booking_db.id}")
 
         # Create the passengers

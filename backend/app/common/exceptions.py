@@ -320,8 +320,17 @@ def handle_exception(error: Exception) -> HTTPException:
     """
     # Handle AppError subclasses
     if isinstance(error, AppError):
+        # Get the status code as an integer
+        status_code = error.status_code
+        # Ensure status_code is an integer
+        if isinstance(status_code, str):
+            try:
+                status_code = int(status_code)
+            except (ValueError, TypeError):
+                status_code = 500
+
         # Log error with appropriate level and context
-        if error.status_code >= 500:
+        if status_code >= 500:
             # Server errors are logged as ERROR
             logger.error(
                 "Server error occurred: %s",
@@ -329,7 +338,7 @@ def handle_exception(error: Exception) -> HTTPException:
                 extra=sanitize_data(error.context),
                 exc_info=True,
             )
-        elif error.status_code >= 400:
+        elif status_code >= 400:
             # Client errors are logged as WARNING
             logger.warning(
                 "Client error occurred: %s",

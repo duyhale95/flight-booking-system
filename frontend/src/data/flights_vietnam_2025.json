@@ -1,0 +1,2402 @@
+[
+  {
+    "flight_date": "2025-07-09",
+    "flight_number": "BL854D",
+    "departure": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-07-09T13:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Kiên Lương",
+      "iata": "XCL",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-07-09T14:46:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2421152,
+    "seats": 152
+  },
+  {
+    "flight_date": "2025-07-09",
+    "flight_number": "BL116A",
+    "departure": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-07-09T13:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Pleiku",
+      "iata": "PXU",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-07-09T14:48:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1443895,
+    "seats": 138
+  },
+  {
+    "flight_date": "2025-08-22",
+    "flight_number": "BL389R",
+    "departure": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-08-22T11:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Rạch Giá",
+      "iata": "VKG",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-08-22T13:34:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2133020,
+    "seats": 219
+  },
+  {
+    "flight_date": "2025-08-22",
+    "flight_number": "BL171X",
+    "departure": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-08-22T11:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-08-22T13:10:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1558588,
+    "seats": 125
+  },
+  {
+    "flight_date": "2025-07-30",
+    "flight_number": "VJ423O",
+    "departure": {
+      "airport": "Sân bay Cam Ranh",
+      "iata": "CXR",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-07-30T08:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-07-30T10:26:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1822960,
+    "seats": 122
+  },
+  {
+    "flight_date": "2025-07-30",
+    "flight_number": "VJ662D",
+    "departure": {
+      "airport": "Sân bay Cam Ranh",
+      "iata": "CXR",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-07-30T08:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-07-30T09:55:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2490689,
+    "seats": 130
+  },
+  {
+    "flight_date": "2025-07-16",
+    "flight_number": "VN887E",
+    "departure": {
+      "airport": "Sân bay Rạch Giá",
+      "iata": "VKG",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-07-16T17:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tuy Hòa",
+      "iata": "TBB",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-07-16T19:29:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 844474,
+    "seats": 192
+  },
+  {
+    "flight_date": "2025-08-12",
+    "flight_number": "VJ988L",
+    "departure": {
+      "airport": "Sân bay Nha Trang",
+      "iata": "NHA",
+      "terminal": "T1",
+      "gate": "E4",
+      "scheduled": "2025-08-12T16:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Kiên Lương",
+      "iata": "XCL",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-08-12T18:05:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1063226,
+    "seats": 148
+  },
+  {
+    "flight_date": "2025-08-04",
+    "flight_number": "BL427T",
+    "departure": {
+      "airport": "Sân bay Thọ Xuân",
+      "iata": "THD",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-08-04T21:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Liên Khương",
+      "iata": "DLI",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-08-04T23:01:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 855945,
+    "seats": 138
+  },
+  {
+    "flight_date": "2025-07-17",
+    "flight_number": "BL952S",
+    "departure": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-07-17T18:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đồng Hới",
+      "iata": "VDH",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-07-17T21:13:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 804991,
+    "seats": 159
+  },
+  {
+    "flight_date": "2025-08-05",
+    "flight_number": "VJ626G",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-05T18:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cà Mau",
+      "iata": "CAH",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-08-05T19:32:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1985842,
+    "seats": 142
+  },
+  {
+    "flight_date": "2025-07-04",
+    "flight_number": "QH999O",
+    "departure": {
+      "airport": "Sân bay Thọ Xuân",
+      "iata": "THD",
+      "terminal": "T1",
+      "gate": "E4",
+      "scheduled": "2025-07-04T06:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tuy Hòa",
+      "iata": "TBB",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-07-04T07:26:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1857653,
+    "seats": 172
+  },
+  {
+    "flight_date": "2025-08-25",
+    "flight_number": "VN770I",
+    "departure": {
+      "airport": "Sân bay Nha Trang",
+      "iata": "NHA",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-25T09:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-08-25T10:28:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1276064,
+    "seats": 137
+  },
+  {
+    "flight_date": "2025-07-26",
+    "flight_number": "BL943S",
+    "departure": {
+      "airport": "Sân bay Phú Quốc",
+      "iata": "PQC",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-07-26T12:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cam Ranh",
+      "iata": "CXR",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-07-26T13:38:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1424736,
+    "seats": 207
+  },
+  {
+    "flight_date": "2025-08-05",
+    "flight_number": "VN679E",
+    "departure": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-08-05T14:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nha Trang",
+      "iata": "NHA",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-08-05T16:59:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 888504,
+    "seats": 207
+  },
+  {
+    "flight_date": "2025-07-17",
+    "flight_number": "VN423V",
+    "departure": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-07-17T13:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cần Thơ",
+      "iata": "VCA",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-07-17T14:52:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 2119977,
+    "seats": 175
+  },
+  {
+    "flight_date": "2025-08-28",
+    "flight_number": "VJ170K",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-28T10:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tuy Hòa",
+      "iata": "TBB",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-08-28T12:36:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1883034,
+    "seats": 193
+  },
+  {
+    "flight_date": "2025-08-07",
+    "flight_number": "QH194N",
+    "departure": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-08-07T14:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cần Thơ",
+      "iata": "VCA",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-08-07T16:33:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2397697,
+    "seats": 219
+  },
+  {
+    "flight_date": "2025-08-12",
+    "flight_number": "QH130G",
+    "departure": {
+      "airport": "Sân bay Đồng Hới",
+      "iata": "VDH",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-08-12T21:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Pleiku",
+      "iata": "PXU",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-08-12T23:01:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 866513,
+    "seats": 172
+  },
+  {
+    "flight_date": "2025-07-02",
+    "flight_number": "BL480Q",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-07-02T19:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Liên Khương",
+      "iata": "DLI",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-07-02T21:04:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 935239,
+    "seats": 191
+  },
+  {
+    "flight_date": "2025-08-09",
+    "flight_number": "VJ287F",
+    "departure": {
+      "airport": "Sân bay Thọ Xuân",
+      "iata": "THD",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-08-09T08:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Rạch Giá",
+      "iata": "VKG",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-08-09T10:16:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2269802,
+    "seats": 217
+  },
+  {
+    "flight_date": "2025-07-07",
+    "flight_number": "VJ699T",
+    "departure": {
+      "airport": "Sân bay Phú Quốc",
+      "iata": "PQC",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-07-07T22:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nha Trang",
+      "iata": "NHA",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-07-07T23:05:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2262967,
+    "seats": 122
+  },
+  {
+    "flight_date": "2025-08-17",
+    "flight_number": "QH622X",
+    "departure": {
+      "airport": "Sân bay Pleiku",
+      "iata": "PXU",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-08-17T22:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-17T23:17:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1838344,
+    "seats": 199
+  },
+  {
+    "flight_date": "2025-08-14",
+    "flight_number": "VN817X",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-08-14T21:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-08-14T23:07:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 844278,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL367F",
+    "departure": {
+      "airport": "Sân bay Tuy Hòa",
+      "iata": "TBB",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-07-05T13:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cần Thơ",
+      "iata": "VCA",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-07-05T15:31:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2162684,
+    "seats": 150
+  },
+  {
+    "flight_date": "2025-08-04",
+    "flight_number": "VJ211C",
+    "departure": {
+      "airport": "Sân bay Vinh",
+      "iata": "VII",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-08-04T06:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-08-04T09:12:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1371563,
+    "seats": 213
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL722U",
+    "departure": {
+      "airport": "Sân bay Đồng Hới",
+      "iata": "VDH",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-07-05T06:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cần Thơ",
+      "iata": "VCA",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-07-05T08:27:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1938451,
+    "seats": 201
+  },
+  {
+    "flight_date": "2025-08-20",
+    "flight_number": "BL200A",
+    "departure": {
+      "airport": "Sân bay Nha Trang",
+      "iata": "NHA",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-08-20T12:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Pleiku",
+      "iata": "PXU",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-20T15:00:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1318726,
+    "seats": 212
+  },
+  {
+    "flight_date": "2025-07-14",
+    "flight_number": "BL111R",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-07-14T05:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cần Thơ",
+      "iata": "VCA",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-07-14T08:01:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2130399,
+    "seats": 139
+  },
+  {
+    "flight_date": "2025-07-02",
+    "flight_number": "VJ902H",
+    "departure": {
+      "airport": "Sân bay Tuy Hòa",
+      "iata": "TBB",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-07-02T07:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cần Thơ",
+      "iata": "VCA",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-07-02T08:50:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2463744,
+    "seats": 209
+  },
+  {
+    "flight_date": "2025-08-03",
+    "flight_number": "BL685Y",
+    "departure": {
+      "airport": "Sân bay Buôn Ma Thuột",
+      "iata": "BMV",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-08-03T17:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Rạch Giá",
+      "iata": "VKG",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-08-03T19:21:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1297312,
+    "seats": 192
+  },
+  {
+    "flight_date": "2025-07-20",
+    "flight_number": "VN964B",
+    "departure": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-07-20T13:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Phú Quốc",
+      "iata": "PQC",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-07-20T14:50:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1958281,
+    "seats": 170
+  },
+  {
+    "flight_date": "2025-07-11",
+    "flight_number": "QH139G",
+    "departure": {
+      "airport": "Sân bay Phú Quốc",
+      "iata": "PQC",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-07-11T18:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-07-11T20:39:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1557001,
+    "seats": 128
+  },
+  {
+    "flight_date": "2025-08-11",
+    "flight_number": "QH288R",
+    "departure": {
+      "airport": "Sân bay Pleiku",
+      "iata": "PXU",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-08-11T10:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Buôn Ma Thuột",
+      "iata": "BMV",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-08-11T12:47:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2146045,
+    "seats": 203
+  },
+  {
+    "flight_date": "2025-07-24",
+    "flight_number": "QH461M",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-07-24T16:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cam Ranh",
+      "iata": "CXR",
+      "terminal": "T1",
+      "gate": "E4",
+      "scheduled": "2025-07-24T18:28:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 886710,
+    "seats": 121
+  },
+  {
+    "flight_date": "2025-08-04",
+    "flight_number": "VN417Z",
+    "departure": {
+      "airport": "Sân bay Vinh",
+      "iata": "VII",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-08-04T17:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Rạch Giá",
+      "iata": "VKG",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-08-04T20:00:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1720758,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-08-11",
+    "flight_number": "BL668N",
+    "departure": {
+      "airport": "Sân bay Vinh",
+      "iata": "VII",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-08-11T05:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cần Thơ",
+      "iata": "VCA",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-08-11T06:19:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1638202,
+    "seats": 194
+  },
+  {
+    "flight_date": "2025-07-09",
+    "flight_number": "BL166T",
+    "departure": {
+      "airport": "Sân bay Liên Khương",
+      "iata": "DLI",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-07-09T08:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-07-09T10:15:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1219801,
+    "seats": 161
+  },
+  {
+    "flight_date": "2025-08-06",
+    "flight_number": "BL525O",
+    "departure": {
+      "airport": "Sân bay Nha Trang",
+      "iata": "NHA",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-06T07:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cam Ranh",
+      "iata": "CXR",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-08-06T09:55:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 836221,
+    "seats": 163
+  },
+  {
+    "flight_date": "2025-08-22",
+    "flight_number": "QH228R",
+    "departure": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-08-22T06:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đồng Hới",
+      "iata": "VDH",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-08-22T08:03:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2425272,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-11",
+    "flight_number": "BL289H",
+    "departure": {
+      "airport": "Sân bay Thọ Xuân",
+      "iata": "THD",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-07-11T11:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-07-11T14:12:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1846604,
+    "seats": 163
+  },
+  {
+    "flight_date": "2025-07-07",
+    "flight_number": "VN944D",
+    "departure": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-07-07T09:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Rạch Giá",
+      "iata": "VKG",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-07-07T11:29:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1073557,
+    "seats": 124
+  },
+  {
+    "flight_date": "2025-07-31",
+    "flight_number": "QH861W",
+    "departure": {
+      "airport": "Sân bay Phú Quốc",
+      "iata": "PQC",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-07-31T11:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-07-31T14:15:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1916340,
+    "seats": 147
+  },
+  {
+    "flight_date": "2025-08-11",
+    "flight_number": "VJ999R",
+    "departure": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-08-11T10:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Rạch Giá",
+      "iata": "VKG",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-08-11T11:41:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1379023,
+    "seats": 138
+  },
+  {
+    "flight_date": "2025-07-21",
+    "flight_number": "QH854A",
+    "departure": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-07-21T17:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-07-21T18:43:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1946165,
+    "seats": 195
+  },
+  {
+    "flight_date": "2025-08-05",
+    "flight_number": "BL674Z",
+    "departure": {
+      "airport": "Sân bay Thọ Xuân",
+      "iata": "THD",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-08-05T11:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Phú Quốc",
+      "iata": "PQC",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-08-05T13:23:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1633736,
+    "seats": 164
+  },
+  {
+    "flight_date": "2025-08-10",
+    "flight_number": "QH888P",
+    "departure": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T1",
+      "gate": "E4",
+      "scheduled": "2025-08-10T12:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Liên Khương",
+      "iata": "DLI",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-08-10T13:26:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2010898,
+    "seats": 130
+  },
+  {
+    "flight_date": "2025-07-22",
+    "flight_number": "BL817F",
+    "departure": {
+      "airport": "Sân bay Tuy Hòa",
+      "iata": "TBB",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-07-22T20:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-07-22T22:51:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1173097,
+    "seats": 214
+  },
+  {
+    "flight_date": "2025-08-02",
+    "flight_number": "VN419S",
+    "departure": {
+      "airport": "Sân bay Liên Khương",
+      "iata": "DLI",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-02T08:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-08-02T09:18:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 2397938,
+    "seats": 185
+  },
+  {
+    "flight_date": "2025-07-27",
+    "flight_number": "VJ378K",
+    "departure": {
+      "airport": "Sân bay Buôn Ma Thuột",
+      "iata": "BMV",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-07-27T20:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tuy Hòa",
+      "iata": "TBB",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-07-27T21:37:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2161833,
+    "seats": 177
+  },
+  {
+    "flight_date": "2025-08-02",
+    "flight_number": "BL599S",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-08-02T06:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-08-02T07:35:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1012365,
+    "seats": 127
+  },
+  {
+    "flight_date": "2025-08-27",
+    "flight_number": "VJ223I",
+    "departure": {
+      "airport": "Sân bay Liên Khương",
+      "iata": "DLI",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-08-27T06:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cam Ranh",
+      "iata": "CXR",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-08-27T07:47:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1129357,
+    "seats": 148
+  },
+  {
+    "flight_date": "2025-07-13",
+    "flight_number": "VN270J",
+    "departure": {
+      "airport": "Sân bay Nha Trang",
+      "iata": "NHA",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-07-13T20:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-07-13T22:17:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 804029,
+    "seats": 204
+  },
+  {
+    "flight_date": "2025-08-15",
+    "flight_number": "VN886S",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-08-15T17:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-08-15T19:13:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 2163739,
+    "seats": 130
+  },
+  {
+    "flight_date": "2025-07-10",
+    "flight_number": "VJ567X",
+    "departure": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-07-10T07:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Thọ Xuân",
+      "iata": "THD",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-07-10T09:27:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2251593,
+    "seats": 215
+  },
+  {
+    "flight_date": "2025-08-06",
+    "flight_number": "BL383C",
+    "departure": {
+      "airport": "Sân bay Cần Thơ",
+      "iata": "VCA",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-06T16:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-06T19:02:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2371447,
+    "seats": 157
+  },
+  {
+    "flight_date": "2025-07-18",
+    "flight_number": "VN859K",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-07-18T05:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-07-18T06:30:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 963259,
+    "seats": 219
+  },
+  {
+    "flight_date": "2025-08-02",
+    "flight_number": "QH559G",
+    "departure": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-08-02T20:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Vinh",
+      "iata": "VII",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-08-02T22:00:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1530823,
+    "seats": 192
+  },
+  {
+    "flight_date": "2025-08-21",
+    "flight_number": "VN129U",
+    "departure": {
+      "airport": "Sân bay Liên Khương",
+      "iata": "DLI",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-08-21T11:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-08-21T13:42:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1360879,
+    "seats": 135
+  },
+  {
+    "flight_date": "2025-08-13",
+    "flight_number": "VJ374L",
+    "departure": {
+      "airport": "Sân bay Tuy Hòa",
+      "iata": "TBB",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-08-13T15:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cà Mau",
+      "iata": "CAH",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-08-13T16:58:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 862229,
+    "seats": 140
+  },
+  {
+    "flight_date": "2025-07-12",
+    "flight_number": "QH877A",
+    "departure": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-07-12T08:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nha Trang",
+      "iata": "NHA",
+      "terminal": "T1",
+      "gate": "E4",
+      "scheduled": "2025-07-12T09:48:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2116674,
+    "seats": 176
+  },
+  {
+    "flight_date": "2025-07-12",
+    "flight_number": "BL148B",
+    "departure": {
+      "airport": "Sân bay Nha Trang",
+      "iata": "NHA",
+      "terminal": "T1",
+      "gate": "E4",
+      "scheduled": "2025-07-12T14:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Liên Khương",
+      "iata": "DLI",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-07-12T15:45:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1917193,
+    "seats": 166
+  },
+  {
+    "flight_date": "2025-07-31",
+    "flight_number": "VJ719S",
+    "departure": {
+      "airport": "Sân bay Buôn Ma Thuột",
+      "iata": "BMV",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-07-31T06:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đồng Hới",
+      "iata": "VDH",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-07-31T09:11:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2344875,
+    "seats": 138
+  },
+  {
+    "flight_date": "2025-08-05",
+    "flight_number": "VN153K",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-08-05T21:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Pleiku",
+      "iata": "PXU",
+      "terminal": "T1",
+      "gate": "E4",
+      "scheduled": "2025-08-05T22:05:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1062121,
+    "seats": 175
+  },
+  {
+    "flight_date": "2025-08-19",
+    "flight_number": "VN903G",
+    "departure": {
+      "airport": "Sân bay Đồng Hới",
+      "iata": "VDH",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-19T12:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Buôn Ma Thuột",
+      "iata": "BMV",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-08-19T14:26:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1464057,
+    "seats": 189
+  },
+  {
+    "flight_date": "2025-08-22",
+    "flight_number": "BL489L",
+    "departure": {
+      "airport": "Sân bay Cà Mau",
+      "iata": "CAH",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-08-22T15:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-08-22T17:16:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1424889,
+    "seats": 216
+  },
+  {
+    "flight_date": "2025-08-06",
+    "flight_number": "VJ283L",
+    "departure": {
+      "airport": "Sân bay Kiên Lương",
+      "iata": "XCL",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-08-06T08:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cà Mau",
+      "iata": "CAH",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-08-06T09:11:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 850759,
+    "seats": 208
+  },
+  {
+    "flight_date": "2025-08-18",
+    "flight_number": "BL668O",
+    "departure": {
+      "airport": "Sân bay Tuy Hòa",
+      "iata": "TBB",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-08-18T21:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-18T22:30:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2357990,
+    "seats": 144
+  },
+  {
+    "flight_date": "2025-08-12",
+    "flight_number": "QH782S",
+    "departure": {
+      "airport": "Sân bay Tuy Hòa",
+      "iata": "TBB",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-08-12T10:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Phú Quốc",
+      "iata": "PQC",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-08-12T11:38:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1636647,
+    "seats": 146
+  },
+  {
+    "flight_date": "2025-07-29",
+    "flight_number": "BL993X",
+    "departure": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-07-29T09:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-07-29T11:49:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1838348,
+    "seats": 176
+  },
+  {
+    "flight_date": "2025-08-21",
+    "flight_number": "VJ988X",
+    "departure": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-08-21T17:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Phú Quốc",
+      "iata": "PQC",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-08-21T18:24:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2138223,
+    "seats": 217
+  },
+  {
+    "flight_date": "2025-07-15",
+    "flight_number": "QH970N",
+    "departure": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T1",
+      "gate": "E4",
+      "scheduled": "2025-07-15T14:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tuy Hòa",
+      "iata": "TBB",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-07-15T15:53:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1068899,
+    "seats": 216
+  },
+  {
+    "flight_date": "2025-08-12",
+    "flight_number": "VN135U",
+    "departure": {
+      "airport": "Sân bay Vinh",
+      "iata": "VII",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-08-12T11:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Kiên Lương",
+      "iata": "XCL",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-08-12T13:26:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1706418,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-08-28",
+    "flight_number": "QH474I",
+    "departure": {
+      "airport": "Sân bay Cần Thơ",
+      "iata": "VCA",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-08-28T06:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-08-28T07:46:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1590934,
+    "seats": 143
+  },
+  {
+    "flight_date": "2025-07-18",
+    "flight_number": "QH905W",
+    "departure": {
+      "airport": "Sân bay Phú Quốc",
+      "iata": "PQC",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-07-18T14:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-07-18T16:12:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1655954,
+    "seats": 159
+  },
+  {
+    "flight_date": "2025-07-10",
+    "flight_number": "VN722X",
+    "departure": {
+      "airport": "Sân bay Vinh",
+      "iata": "VII",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-07-10T15:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cà Mau",
+      "iata": "CAH",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-07-10T16:53:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1101397,
+    "seats": 194
+  },
+  {
+    "flight_date": "2025-07-01",
+    "flight_number": "VJ459Z",
+    "departure": {
+      "airport": "Sân bay Pleiku",
+      "iata": "PXU",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-07-01T06:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-07-01T08:28:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1567604,
+    "seats": 129
+  },
+  {
+    "flight_date": "2025-07-15",
+    "flight_number": "VN176B",
+    "departure": {
+      "airport": "Sân bay Rạch Giá",
+      "iata": "VKG",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-07-15T19:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-07-15T21:36:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 2477425,
+    "seats": 184
+  },
+  {
+    "flight_date": "2025-07-30",
+    "flight_number": "VJ936I",
+    "departure": {
+      "airport": "Sân bay Phú Quốc",
+      "iata": "PQC",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-07-30T14:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cam Ranh",
+      "iata": "CXR",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-07-30T15:29:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1974703,
+    "seats": 206
+  },
+  {
+    "flight_date": "2025-07-16",
+    "flight_number": "QH133U",
+    "departure": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-07-16T15:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Điện Biên",
+      "iata": "DIN",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-07-16T17:11:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 968824,
+    "seats": 165
+  },
+  {
+    "flight_date": "2025-08-03",
+    "flight_number": "QH264U",
+    "departure": {
+      "airport": "Sân bay Kiên Lương",
+      "iata": "XCL",
+      "terminal": "T1",
+      "gate": "E4",
+      "scheduled": "2025-08-03T20:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Vinh",
+      "iata": "VII",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-08-03T22:06:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1514760,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-07-07",
+    "flight_number": "QH511Q",
+    "departure": {
+      "airport": "Sân bay Cà Mau",
+      "iata": "CAH",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-07-07T14:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Rạch Giá",
+      "iata": "VKG",
+      "terminal": "T2",
+      "gate": "A5",
+      "scheduled": "2025-07-07T16:19:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2022493,
+    "seats": 216
+  },
+  {
+    "flight_date": "2025-08-06",
+    "flight_number": "VJ741B",
+    "departure": {
+      "airport": "Sân bay Vinh",
+      "iata": "VII",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-08-06T13:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-08-06T15:26:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1997609,
+    "seats": 190
+  },
+  {
+    "flight_date": "2025-07-02",
+    "flight_number": "QH744H",
+    "departure": {
+      "airport": "Sân bay Cần Thơ",
+      "iata": "VCA",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-07-02T20:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cà Mau",
+      "iata": "CAH",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-07-02T22:52:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1647939,
+    "seats": 166
+  },
+  {
+    "flight_date": "2025-07-19",
+    "flight_number": "VN724J",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-07-19T19:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-07-19T21:05:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1857855,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-08-14",
+    "flight_number": "BL916M",
+    "departure": {
+      "airport": "Sân bay Rạch Giá",
+      "iata": "VKG",
+      "terminal": "T1",
+      "gate": "B15",
+      "scheduled": "2025-08-14T07:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cà Mau",
+      "iata": "CAH",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-14T09:09:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 903212,
+    "seats": 206
+  },
+  {
+    "flight_date": "2025-08-24",
+    "flight_number": "BL914H",
+    "departure": {
+      "airport": "Sân bay Đồng Hới",
+      "iata": "VDH",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-08-24T10:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Liên Khương",
+      "iata": "DLI",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-08-24T11:56:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1950884,
+    "seats": 142
+  },
+  {
+    "flight_date": "2025-08-25",
+    "flight_number": "BL133P",
+    "departure": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-08-25T06:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Thọ Xuân",
+      "iata": "THD",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-25T08:09:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 923213,
+    "seats": 144
+  },
+  {
+    "flight_date": "2025-08-17",
+    "flight_number": "BL603C",
+    "departure": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-08-17T20:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-08-17T21:19:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1241506,
+    "seats": 123
+  },
+  {
+    "flight_date": "2025-07-13",
+    "flight_number": "VJ725H",
+    "departure": {
+      "airport": "Sân bay Kiên Lương",
+      "iata": "XCL",
+      "terminal": "T1",
+      "gate": "E4",
+      "scheduled": "2025-07-13T21:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-07-13T23:03:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2484147,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-16",
+    "flight_number": "BL717G",
+    "departure": {
+      "airport": "Sân bay Rạch Giá",
+      "iata": "VKG",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-07-16T21:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cà Mau",
+      "iata": "CAH",
+      "terminal": "T2",
+      "gate": "C14",
+      "scheduled": "2025-07-16T22:55:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2110559,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-08-06",
+    "flight_number": "VN283X",
+    "departure": {
+      "airport": "Sân bay Chu Lai",
+      "iata": "VCL",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-08-06T19:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Vinh",
+      "iata": "VII",
+      "terminal": "T1",
+      "gate": "E4",
+      "scheduled": "2025-08-06T21:08:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1025720,
+    "seats": 125
+  },
+  {
+    "flight_date": "2025-08-27",
+    "flight_number": "QH886W",
+    "departure": {
+      "airport": "Sân bay Cam Ranh",
+      "iata": "CXR",
+      "terminal": "T1",
+      "gate": "A5",
+      "scheduled": "2025-08-27T18:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T1",
+      "gate": "E4",
+      "scheduled": "2025-08-27T21:14:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2243953,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-08-02",
+    "flight_number": "VN458D",
+    "departure": {
+      "airport": "Sân bay Thọ Xuân",
+      "iata": "THD",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-08-02T05:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "D7",
+      "scheduled": "2025-08-02T06:07:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1700097,
+    "seats": 205
+  },
+  {
+    "flight_date": "2025-07-29",
+    "flight_number": "VJ706K",
+    "departure": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T2",
+      "gate": "E4",
+      "scheduled": "2025-07-29T18:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Thọ Xuân",
+      "iata": "THD",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-07-29T19:51:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1293311,
+    "seats": 167
+  },
+  {
+    "flight_date": "2025-08-28",
+    "flight_number": "BL726P",
+    "departure": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-08-28T21:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cà Mau",
+      "iata": "CAH",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-08-28T23:17:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1076390,
+    "seats": 195
+  },
+  {
+    "flight_date": "2025-07-20",
+    "flight_number": "QH265G",
+    "departure": {
+      "airport": "Sân bay Liên Khương",
+      "iata": "DLI",
+      "terminal": "T1",
+      "gate": "F18",
+      "scheduled": "2025-07-20T22:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Cam Ranh",
+      "iata": "CXR",
+      "terminal": "T2",
+      "gate": "D7",
+      "scheduled": "2025-07-21T00:04:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1374035,
+    "seats": 150
+  },
+  {
+    "flight_date": "2025-08-29",
+    "flight_number": "QH857N",
+    "departure": {
+      "airport": "Sân bay Pleiku",
+      "iata": "PXU",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-08-29T15:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Vinh",
+      "iata": "VII",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-08-29T17:13:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2167642,
+    "seats": 177
+  },
+  {
+    "flight_date": "2025-08-04",
+    "flight_number": "VJ652Q",
+    "departure": {
+      "airport": "Sân bay Rạch Giá",
+      "iata": "VKG",
+      "terminal": "T2",
+      "gate": "B15",
+      "scheduled": "2025-08-04T06:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-08-04T08:56:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1116799,
+    "seats": 132
+  },
+  {
+    "flight_date": "2025-08-02",
+    "flight_number": "VJ853Q",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "F18",
+      "scheduled": "2025-08-02T22:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Huế",
+      "iata": "HUI",
+      "terminal": "T1",
+      "gate": "C14",
+      "scheduled": "2025-08-03T01:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1560229,
+    "seats": 193
+  }
+]

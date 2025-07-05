@@ -1,0 +1,54 @@
+[
+  {
+    "airline": {
+      "iataCode": "AV",
+      "icaoCode": "AVA",
+      "name": "SA AVIANCA"
+    },
+    "arrival": {
+      "actualRunway": null,
+      "actualTime": null,
+      "baggage": null,
+      "delay": "65",
+      "estimatedRunway": null,
+      "estimatedTime": "2024-06-18T23:10:00.000",
+      "gate": "3",
+      "iataCode": "JFK",
+      "icaoCode": "KJFK",
+      "scheduledTime": "2024-06-18T22:05:00.000",
+      "terminal": "1"
+    },
+    "codeshared": {
+      "airline": {
+        "iataCode": "br",
+        "icaoCode": "eva",
+        "name": "eva air"
+      },
+      "flight": {
+        "iataNumber": "br32",
+        "icaoNumber": "eva32",
+        "number": "32"
+      }
+    },
+    "departure": {
+      "actualRunway": "2024-06-18T20:46:00.000",
+      "actualTime": "2024-06-18T20:46:00.000",
+      "baggage": null,
+      "delay": "97",
+      "estimatedRunway": "2024-06-18T20:46:00.000",
+      "estimatedTime": "2024-06-18T19:10:00.000",
+      "gate": "C4",
+      "iataCode": "TPE",
+      "icaoCode": "RCTP",
+      "scheduledTime": "2024-06-18T19:10:00.000",
+      "terminal": "2"
+    },
+    "flight": {
+      "iataNumber": "AV4511",
+      "icaoNumber": "AVA4511",
+      "number": "4511"
+    },
+    "status": "scheduled",
+    "type": "arrival"
+  }
+]

@@ -1,0 +1,2618 @@
+[
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL441",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T06:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T07:30:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2475709,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ759",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T07:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T09:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2034213,
+    "seats": 192
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH183",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T12:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T14:00:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1654646,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ363",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-05T17:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T18:45:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2117403,
+    "seats": 198
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ397",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T10:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T11:45:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2195790,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ541",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T20:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T22:45:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1958760,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL247",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T09:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T11:00:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1300619,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL842",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T00:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-05T02:15:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1091009,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH220",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T03:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-05T05:30:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2059541,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN637",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T10:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T12:30:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1357076,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH560",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T04:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T06:30:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 891917,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN412",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T08:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T10:15:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1723180,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ194",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T02:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T03:15:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1407240,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH862",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T15:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T16:30:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1838137,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH572",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T13:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-05T15:00:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2002799,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH667",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T22:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T23:00:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1505745,
+    "seats": 192
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL300",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T07:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T09:15:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1431842,
+    "seats": 204
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH371",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T20:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "A13",
+      "scheduled": "2025-07-05T21:15:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1050970,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN852",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T19:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T21:30:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1030830,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH626",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T18:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T19:30:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1835178,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN972",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T23:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "A13",
+      "scheduled": "2025-07-06T01:00:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1793171,
+    "seats": 198
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH571",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T13:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T15:45:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1583783,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH594",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T18:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T20:45:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1425474,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ625",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "E12",
+      "scheduled": "2025-07-05T07:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T08:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1086806,
+    "seats": 192
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ863",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T13:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "A13",
+      "scheduled": "2025-07-05T16:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1148966,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL351",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T08:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T09:45:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1392319,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN176",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-05T21:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T22:30:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 2326705,
+    "seats": 198
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH773",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T11:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T13:00:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 902893,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL133",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T10:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T12:15:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2428267,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN804",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T04:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T05:15:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1285391,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL681",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T09:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "A13",
+      "scheduled": "2025-07-05T10:45:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1508804,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH610",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T10:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T12:45:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1393878,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ817",
+    "departure": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T21:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T23:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2360725,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL721",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "E12",
+      "scheduled": "2025-07-05T11:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-05T14:00:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1453610,
+    "seats": 198
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ198",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T09:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T10:30:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 880888,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN767",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T04:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-05T06:15:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1919350,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL200",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "A13",
+      "scheduled": "2025-07-05T05:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T07:45:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1331020,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN708",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T19:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "A13",
+      "scheduled": "2025-07-05T21:45:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1322011,
+    "seats": 192
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH210",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T10:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T11:15:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1127527,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL278",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T00:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T01:45:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2288159,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL773",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T03:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T05:30:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1290668,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN238",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T18:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T20:30:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1607737,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ372",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T14:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T15:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2192019,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ779",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T14:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T16:15:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1566116,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL686",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T11:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T12:45:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 975232,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN341",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T16:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T19:00:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1603917,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH683",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T22:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-06T01:00:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1213063,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH385",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-05T14:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T15:00:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1777339,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ557",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T01:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T02:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1640368,
+    "seats": 192
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN792",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T09:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-05T11:00:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 2136157,
+    "seats": 204
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN291",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T02:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T04:00:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1360470,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ556",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T17:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T18:45:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2236015,
+    "seats": 192
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH845",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T05:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T06:15:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2426645,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ951",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T09:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T10:15:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1655193,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH613",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T21:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T23:00:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1473193,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL369",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T07:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "E12",
+      "scheduled": "2025-07-05T10:00:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2342514,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ234",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T18:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T20:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2057129,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL247",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "E12",
+      "scheduled": "2025-07-05T14:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T16:00:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1471004,
+    "seats": 192
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL326",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "E12",
+      "scheduled": "2025-07-05T13:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "A13",
+      "scheduled": "2025-07-05T15:00:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 873869,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH869",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T11:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T12:45:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1557761,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL209",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T18:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T19:45:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2487531,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ118",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T07:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T09:15:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1274302,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL148",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T23:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-06T01:00:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 820094,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH358",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "A13",
+      "scheduled": "2025-07-05T02:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T03:15:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1871908,
+    "seats": 198
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH769",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T01:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T02:15:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1248045,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH831",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T02:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T04:00:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2232119,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ118",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T19:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "E12",
+      "scheduled": "2025-07-05T21:45:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1580579,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN563",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T17:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T20:00:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1111127,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN115",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T07:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T09:00:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1044602,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL271",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T18:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T20:30:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1071494,
+    "seats": 192
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ266",
+    "departure": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "E12",
+      "scheduled": "2025-07-05T19:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T21:30:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1129086,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN239",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T22:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "E12",
+      "scheduled": "2025-07-05T23:45:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1654853,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN525",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T22:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-06T00:30:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 864208,
+    "seats": 198
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH643",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T13:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T15:15:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1929406,
+    "seats": 198
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ617",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T18:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T21:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1986812,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL280",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-05T15:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T17:00:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1489734,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ283",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T23:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-06T01:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 1186138,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL797",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T08:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T10:45:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1358456,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL212",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T03:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "E12",
+      "scheduled": "2025-07-05T06:00:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1239939,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH204",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "E12",
+      "scheduled": "2025-07-05T11:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T13:45:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2331008,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL135",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T03:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T05:45:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1259261,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ372",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T22:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-06T00:15:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 823295,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH288",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T17:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "A13",
+      "scheduled": "2025-07-05T18:00:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1946739,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL926",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T16:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T18:30:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2039544,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN493",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "A13",
+      "scheduled": "2025-07-05T06:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "A13",
+      "scheduled": "2025-07-05T07:45:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1172982,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH696",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T18:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T20:00:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2375670,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL659",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T01:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T02:15:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 817302,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL295",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T08:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T09:15:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1573345,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN937",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T00:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "E12",
+      "scheduled": "2025-07-05T01:30:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 963324,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN584",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T16:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T17:15:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 827313,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ998",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T02:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Nội Bài",
+      "iata": "HAN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T03:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2446574,
+    "seats": 198
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN537",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T11:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T13:00:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 884484,
+    "seats": 186
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL376",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T21:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T23:30:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2254427,
+    "seats": 198
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL363",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T14:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T16:30:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2381598,
+    "seats": 198
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL476",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T08:30:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T10:00:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1005315,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN488",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T22:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "F17",
+      "scheduled": "2025-07-05T23:45:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 2409625,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN562",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T10:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T11:30:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1105323,
+    "seats": 180
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ356",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "B16",
+      "scheduled": "2025-07-05T09:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T10:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2132741,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN401",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T16:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T17:30:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1472265,
+    "seats": 198
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH775",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "E12",
+      "scheduled": "2025-07-05T06:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T08:15:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1622494,
+    "seats": 198
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VJ457",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T18:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T21:00:00"
+    },
+    "airline": {
+      "name": "VietJet Air",
+      "iata": "VJ"
+    },
+    "price": 2111013,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN480",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-05T19:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "C7",
+      "scheduled": "2025-07-05T21:00:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 848929,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL140",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T17:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T18:30:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 1740234,
+    "seats": 162
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH411",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "D20",
+      "scheduled": "2025-07-05T10:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "C7",
+      "scheduled": "2025-07-05T11:15:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 1728534,
+    "seats": 168
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN216",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T13:00:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T15:15:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1499167,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "VN239",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "B16",
+      "scheduled": "2025-07-05T09:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "A13",
+      "scheduled": "2025-07-05T10:45:00"
+    },
+    "airline": {
+      "name": "Vietnam Airlines",
+      "iata": "VN"
+    },
+    "price": 1584657,
+    "seats": 192
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL814",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T2",
+      "gate": "F17",
+      "scheduled": "2025-07-05T20:15:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "D20",
+      "scheduled": "2025-07-05T22:00:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2284013,
+    "seats": 156
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "BL337",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T03:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T2",
+      "gate": "A13",
+      "scheduled": "2025-07-05T05:45:00"
+    },
+    "airline": {
+      "name": "Pacific Airlines",
+      "iata": "BL"
+    },
+    "price": 2322840,
+    "seats": 174
+  },
+  {
+    "flight_date": "2025-07-05",
+    "flight_number": "QH133",
+    "departure": {
+      "airport": "Sân bay Đà Nẵng",
+      "iata": "DAD",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T19:45:00"
+    },
+    "arrival": {
+      "airport": "Sân bay Tân Sơn Nhất",
+      "iata": "SGN",
+      "terminal": "T1",
+      "gate": "E12",
+      "scheduled": "2025-07-05T22:00:00"
+    },
+    "airline": {
+      "name": "Bamboo Airways",
+      "iata": "QH"
+    },
+    "price": 2068437,
+    "seats": 174
+  }
+]

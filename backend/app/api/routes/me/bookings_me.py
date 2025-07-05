@@ -2,8 +2,15 @@ import logging
 from typing import Any, Optional
 
 from fastapi import APIRouter
+from pydantic import BaseModel
 
-from app.api.cruds import ViewFilter, booking_crud, passenger_crud, ticket_crud
+from app.api.cruds import (
+    ViewFilter,
+    booking_crud,
+    passenger_crud,
+    seat_crud,
+    ticket_crud,
+)
 from app.api.deps import CurrentUser, SessionDep
 from app.common.exceptions import (
     BookingError,
@@ -22,12 +29,22 @@ from app.domain.schemas import (
     PassengerPublic,
     PassengersPublic,
     PassengerUpdate,
+    SeatUpdate,
     TicketPublic,
     TicketsPublic,
 )
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/bookings", tags=["bookings"])
+
+
+class BookingResponse(BaseModel):
+    """Response schema for a booking"""
+
+    booking_id: str
+    booking_number: str
+    status: str
+    success: bool
 
 
 @router.get("", response_model=BookingsPublic)
@@ -58,8 +75,10 @@ def create_user_booking(
     Create a booking for the current user with passengers and tickets.
     """
     logger.info(f"Creating booking for user ID: {current_user.id}")
+    logger.debug(f"Booking data received: {booking_in.model_dump()}")
 
     try:
+        # Ensure user is creating booking for themselves
         if booking_in.user_id != current_user.id:
             logger.warning(
                 f"User {current_user.id} is not authorized to create booking "
@@ -67,14 +86,75 @@ def create_user_booking(
             )
             raise UnauthorizedBookingAccessError()
 
+        # Validate passengers
+        if not booking_in.passengers or len(booking_in.passengers) == 0:
+            logger.warning("No passengers provided in booking")
+            raise BookingError(400, "At least one passenger is required")
+
+        # Validate dates
+        for i, passenger in enumerate(booking_in.passengers):
+            if not passenger.date_of_birth:
+                logger.warning(f"Missing date_of_birth for passenger {i}")
+                raise BookingError(400, f"Missing date_of_birth for passenger {i}")
+
+        # Process seat reservations if needed
+        for seat_id in booking_in.flight_info.seat_ids:
+            if seat_id:
+                try:
+                    # Get seat to check availability and mark as unavailable
+                    seat = seat_crud.get_by_id(session, seat_id)
+                    if not seat.is_available:
+                        logger.warning(f"Seat {seat_id} is already reserved")
+                        # Continue anyway, the booking creation will handle it
+                    else:
+                        # Mark seat as unavailable after booking is created
+                        logger.info(f"Seat {seat_id} will be reserved")
+                except Exception as e:
+                    logger.error(f"Error checking seat {seat_id}: {str(e)}")
+                    # Continue with booking process
+
+        # Create booking with passengers and tickets
         booking_db = booking_crud.create_detailed_booking(session, booking_in)
 
+        # Mark seats as unavailable after booking is created
+        for seat_id in booking_in.flight_info.seat_ids:
+            if seat_id:
+                try:
+                    seat = seat_crud.get_by_id(session, seat_id)
+                    seat_update = SeatUpdate(is_available=False)
+                    seat_crud.update(session, seat, seat_update)
+                    logger.info(f"Marked seat {seat_id} as unavailable")
+                except Exception as e:
+                    # Log error but don't fail the booking
+                    logger.error(f"Error updating seat {seat_id}: {str(e)}")
+
         logger.info(f"Booking created successfully: {booking_db.id}")
-        return booking_db
+
+        # Return success response with formatted response for payment flow
+        if (
+            hasattr(booking_db, "id")
+            and hasattr(booking_db, "booking_number")
+            and hasattr(booking_db, "status")
+        ):
+            return booking_db
+        else:
+            return {
+                "booking_id": booking_db.id,
+                "booking_number": booking_db.booking_number,
+                "status": booking_db.status.value,
+                "success": True,
+            }
 
     except BookingError as e:
+        session.rollback()
         logger.error(f"Error creating booking: {str(e)}")
         raise handle_exception(e) from e
+    except Exception as e:
+        session.rollback()
+        logger.error(f"Unexpected error in booking creation: {str(e)}")
+        raise handle_exception(
+            BookingError(500, f"Failed to create booking: {str(e)}")
+        ) from e
 
 
 @router.get("/{booking_id}", response_model=BookingPublic)
@@ -101,6 +181,7 @@ def read_user_booking(
         logger.error(f"Error retrieving booking: {str(e)}")
         raise handle_exception(e) from e
 
+
 @router.get("/{booking_id}/details", response_model=BookingDetailPublic)
 def read_user_booking_details(
     session: SessionDep, current_user: CurrentUser, booking_id: str
@@ -125,9 +206,6 @@ def read_user_booking_details(
     except BookingError as e:
         logger.error(f"Error retrieving booking: {str(e)}")
         raise handle_exception(e) from e
-
-
-
 
 
 @router.delete("/{booking_id}", response_model=Message)
