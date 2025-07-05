@@ -8,11 +8,11 @@
 <h1 align="center"><b>SOFTWARE ENGINEERING INTRODUCTION</b></h1>
 
 # Team Members
-| No.    | Student ID    | Full Name              | Github                                                  | Email                   |
-| ------ |:-------------:| ----------------------:|--------------------------------------------------------:|-------------------------:|
-| 1      | 22520197      | Võ Nguyên Đăng         |                                                         | 22520197@gm.uit.edu.vn   |
-| 2      | 23520363      | Hà Lê Duy              |                                                         | 23520363@gm.uit.edu.vn   |
-| 3      | 23521013      | Nguyễn Trần Nghĩa      |                                                         | 23521013@gm.uit.edu.vn   |
+| No.    | Student ID    | Full Name              | 
+| ------ |:-------------:| ----------------------:|
+| 1      | 22520197      | Võ Nguyên Đăng         | 
+| 2      | 23520363      | Hà Lê Duy              |    
+| 3      | 23521013      | Nguyễn Trần Nghĩa      |                                                          
 
 # COURSE INFORMATION
 * **Course Name:** Software Engineering Introduction
@@ -202,4 +202,4 @@ For support and questions:
 ---
 
 <!-- Footer -->
-<p align='center'>Copyright © 2024 - [Your Name]</p>
+<p align='center'>Copyright © 2025 - HÀ LÊ DUY</p>
